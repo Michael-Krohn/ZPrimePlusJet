@@ -17,34 +17,30 @@ DBTAGMIN=-99
 def main(options,args):
     #idir = "/eos/uscms/store/user/lpchbb/ggHsample_V11/sklim-v0-28Oct/"
     #odir = "plots_2016_10_31/"
-    idir = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/cvernier'
-#    idir = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/norm2/cvernier'
-#    idir = options.idir
+    idir = options.idir
     idirData = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/cvernier'
-#    idirData = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/norm2/cvernier'
 #    idirData = 'root://cmseos.fnal.gov//eos/uscms/store/user/lpchbb/zprimebits-v12.05/'
     odir = options.odir
     lumi = options.lumi
     
-    legname = {'ggH': 'GF H(b#bar{b})',
-	       'VBF': 'VBF H(b#bar{b})',
-               'VH':'VH(b#bar{b})',
-	       'ttH': 't#bar{t}H(b#bar{b})',
+    legname = {'ggH': 'H',
+	       'Zqq': 'Z(q#bar{q})+Jets',
+               'Wqq':'W(q#bar{q})+Jets',
+	       'DYqq': ' Drell-Yan(q#bar{q})+Jets',
 	       'QCD': 'QCD',
 	       'ZZ': 'Z',
 	       'WW': 'W',	   	
 	       'Phibb': ' Phi(125)(b#bar{b})'}
 
         
-    tfiles = {'ggH': [idirData + '/GluGluHToBB_M125_13TeV_powheg_pythia8_CKKW_1000pb_weighted.root'],
-	       'VBF': [idir+'/VBFHToBB_M_125_13TeV_powheg_pythia8_weightfix_all_1000pb_weighted.root'],
-               'VH': [idir+'/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_ext_1000pb_weighted.root',
-			idir+'/ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
-			idir+'/WminusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
-			idir+'/WplusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
-			idir+'/ggZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
-			idir+'/ggZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root'],
-               'ttH': [idir+'/ttHTobb_M125_13TeV_powheg_pythia8_1000pb_weighted.root'],
+    tfiles = {'ggH': [idirData + '/GluGluHToBB_M125_13TeV_powheg_pythia8_all_1000pb_weighted.root'],
+	       'Zqq': [idir+'/ZJetsToQQ_HT_600ToInf_13TeV_1000pb_weighted.root'],
+               'Wqq': [idir+'/WJetsToQQ_HT180_13TeV_0_1000pb_weighted.root'],
+               'QCD': [idir+'/QCD_HT300to500_13TeV_1000pb_weighted.root',
+			idir+'/QCD_HT500to700_13TeV_1000pb_weighted.root',
+			idir+'/QCD_HT700to1000_13TeV_1000pb_weighted.root',
+			idir+'/QCD_HT1500to2000_13TeV_1000pb_weighted.root',
+			idir+'/QCD_HT2000toInf_13TeV_1000pb_weighted.root'],
                'DYqq' : [idir+'/DYJetsToQQ_HT180_13TeV_0_1000pb_weighted.root'],
 #                        idir+'/WplusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root'],
 #               'tthbb' : [idir+'/ttHTobb_M125_13TeV_powheg_pythia8_1000pb_weighted.root'],
@@ -54,9 +50,9 @@ def main(options,args):
                }
 
     color = {'ggH': ROOT.kPink+5,
-	     'VBF': ROOT.kBlue+2,
-             'VH': ROOT.kAzure+6,
-	     'ttH': ROOT.kOrange+1,
+	     'Zqq': ROOT.kBlue+2,
+             'Wqq': ROOT.kAzure+3,
+	     'DYqq': ROOT.kPink+5,
 	     'QCD': ROOT.kBlack,
 	     'ZZ': ROOT.kAzure+1,	
 	     'WW': ROOT.kOrange+1,
@@ -64,9 +60,9 @@ def main(options,args):
                }
 
     style = {'ggH': 1,
-	     'VBF': 2,
-             'VH': 2,
-	     'ttH': 2,
+	     'Zqq': 1,
+             'Wqq': 1,
+	     'DYqq': 1,
 	     'WHbb':1,
              'QCD': 1,
 	     'ZZ':1,		
@@ -79,9 +75,9 @@ def main(options,args):
 #    sigSamples['Zqq']  = sampleContainer('Zqq',tfiles['Zqq']  , 1, DBTAGMIN,lumi)
 #    sigSamples['Wqq'] = sampleContainer('Wqq',tfiles['Wqq'], 1, DBTAGMIN,lumi) 
 #    sigSamples['DYqq'] = sampleContainer('DYqq',tfiles['DYqq'], 1, DBTAGMIN,lumi ) 	
-    sigSamples['VBF'] = sampleContainer('VBF',tfiles['VBF'], 1, DBTAGMIN,lumi )
-    sigSamples['VH'] = sampleContainer('VH',tfiles['VH'], 1, DBTAGMIN,lumi )	
-    sigSamples['ttH'] = sampleContainer('ttH',tfiles['ttH'], 1, DBTAGMIN,lumi )
+    sigSamples['QCD'] = sampleContainer('QCD',tfiles['QCD'], 1, DBTAGMIN,lumi )
+    sigSamples['ZZ'] = sampleContainer('ZZ',tfiles['ZZ'], 1, DBTAGMIN,lumi )	
+    sigSamples['WW'] = sampleContainer('WW',tfiles['WW'], 1, DBTAGMIN,lumi )
     #sigSamples['Phibb'] = sampleContainer('Phibb',tfiles['Phibb'], 1, lumi*0.035)   
 
 
@@ -91,42 +87,19 @@ def main(options,args):
 
     plots = [
 #'h_n_ak4'           ,
-'h_met_dbtagCut'     ,
-'h_DeltaR_0'     ,
-'h_DeltaR_1'     ,
-'h_DeltaR_Higgs_AK8' ,
+#'h_met'             ,
 #'h_pt_ak8'          ,
-'h_pt_ak8_dbtagCut' ,
-#'h_msd_ak8'         ,
-'h_msd_ak8_dbtagCut',
-'h_msd_ak8_dbtagCut_Cuts',
-'h_dEta_ak4_dbtagCut',
-'h_dEta_ak4',
-'h_dEta_ak4_nonH_dbtagCut',
-'h_dEta_ak4_nonH_dbtagCut_pT30',
-'h_dEta_ak4_nonH_dbtagCut_pT50',
-'h_dEta_ak4_nonH_dbtagCut_pT70',
-'h_dEta_ak4_nonH_dbtagCut_pT100',
-'h_mjj_ak4'          ,
-'h_dEta_ak4_nonH'    ,
-'h_msd_ak8_4ak4'     ,
-'h_mjj_ak4_qq'       ,
-#'h_mjj_ak4_qq_pT30'       ,
-#'h_mjj_ak4_qq_pT50'       ,
-#'h_mjj_ak4_qq_pT70'       ,
-#'h_mjj_ak4_qq_pT100'       ,
-'h_ak4_multiplicity_pT30' ,
-'h_ak4_multiplicity_pT50' ,
-'h_ak4_multiplicity_pT70' ,
-'h_ak4_multiplicity_pT100' ,
+#'h_pt_ak8_dbtagCut' ,
+'h_msd_ak8'         ,
+#'h_msd_ak8_dbtagCut',
 #'h_msd_ak8_t21ddtCut'  ,
 #'h_msd_ak8_N2Cut'   ,
-#'h_dbtag_ak8'       ,
-#'h_t21ddt_ak8'      ,
+'h_dbtag_ak8'       ,
+'h_t21ddt_ak8'      ,
 #'h_t32_ak8'         ,
 #'h_t32_ak8_t21ddtCut'  ,
-#'h_n2b1sd_ak8'      ,
-#'h_n2b1sdddt_ak8'   ,
+'h_n2b1sd_ak8'      ,
+'h_n2b1sdddt_ak8'   ,
 #'h_pt_bbleading' ,
 #'h_bb_bbleading' ,
 #'h_msd_bbleading',

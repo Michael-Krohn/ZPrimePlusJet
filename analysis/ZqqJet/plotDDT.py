@@ -13,9 +13,11 @@ def main(options,args):
     
     
     c_ptH = ROOT.TCanvas("c_ptH","c_ptH",800,600)
+#    file_in = ROOT.TFile.Open("h3_n2ddt_CA15.root")
     file_in = ROOT.TFile.Open("h3_n2ddt_26eff_36binrho11pt_Spring16.root")
     file_in.cd()
     
+#    tt = file_in.Get('Rho2D').Clone()
     tt = file_in.Get('h2ddt').Clone()
     
     tt.Draw('COLZ')
@@ -34,7 +36,8 @@ def main(options,args):
     tt.GetZaxis().SetLabelSize(0.045)
     tt.GetZaxis().SetTitleSize(0.05)
     tt.GetZaxis().SetTitleOffset(1.2)
-    tt.GetZaxis().SetTitle('N_{2}^{1} cut at 26% QCD eff')
+    tt.GetZaxis().SetTitle('N_{2}^{1}(26%)')
+#    palette = ROOT.TPaletteAxis(-0.95,200,-0.6,1000,tt)
     palette = ROOT.TPaletteAxis(-1.45,450,-1.1,1000,tt)
     tt.Draw('COL')
     palette.Draw()
@@ -75,7 +78,9 @@ if __name__ == '__main__':
     ROOT.gStyle.SetOptFit(0000)
     ROOT.gROOT.SetBatch()
     #ROOT.gStyle.SetPalette(ROOT.kBlackBody)
-    #ROOT.gStyle.SetPalette(ROOT.kBird)    
+#    ROOT.gStyle.SetPalette(ROOT.kBlue)
+#    ROOT.gStyle.SetPalette(ROOT.kBird)
+
     stops = [ 0.0, 1.0]
     red =   [ 1.0, 0.3]
     green = [ 1.0, 0.3]

@@ -15,10 +15,10 @@ DBTMIN=-99
 #
 def makePlots(plot,hs,hb,hd,hall,legname,color,style,isData,odir,lumi,ofile,canvases):
     if isData:
-        c = makeCanvasComparisonStackWData(hd,hs,hb,legname,color,style,plot.replace('h_','stack_'),odir,lumi,ofile)
+        c = makeCanvasComparisonStackWData(hd,hs,hb,legname,color,style,plot.replace('h_','stack_'),odir,lumi,ofile,True,False,True)
         canvases.append(c)	
     else:
-        c = makeCanvasComparisonStack(hs,hb,legname,color,style,'ggHbb',plot.replace('h_','stack_'),odir,lumi,False,ofile)
+        c = makeCanvasComparisonStack(hs,hb,legname,color,style,'ggHbb',plot.replace('h_','stack_'),odir,lumi,True,ofile)
         c1 = makeCanvasComparison(hall,legname,color,style,plot.replace('h_','signalcomparison_'),odir,lumi,ofile,True)
 #        canvases.append(c)	
         canvases.append(c1)
@@ -26,7 +26,8 @@ def makePlots(plot,hs,hb,hd,hall,legname,color,style,isData,odir,lumi,ofile,canv
 def main(options,args,outputExists):
     #idir = "/eos/uscms/store/user/lpchbb/ggHsample_V11/sklim-v0-28Oct/"
     #odir = "plots_2016_10_31/"
-    idir = options.idir   
+#    idir = options.idir
+    idir = 'root://cmseos.fnal.gov//eos/uscms/store/user/lpchbb/zprimebits-v12.04/cvernier'
     idirData = 'root://cmseos.fnal.gov//eos/uscms/store/user/lpchbb/zprimebits-v12.05/'
     odir = options.odir
     lumi = options.lumi
@@ -63,7 +64,7 @@ def main(options,args,outputExists):
     if isData and muonCR:
         legname['data'] = 'SingleMuon data'
        
-    tfiles = {'Hbb':   [idir+'/GluGluHToBB_M125_13TeV_powheg_pythia8_all_1000pb_weighted.root',
+    tfiles = {'Hbb':   [idir+'/GluGluHToBB_M125_13TeV_powheg_pythia8_CKKW_1000pb_weighted.root',
 			idir+'/VBFHToBB_M_125_13TeV_powheg_pythia8_weightfix_all_1000pb_weighted.root',
 			idir+'/ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
 			idir+'/WminusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
@@ -72,7 +73,7 @@ def main(options,args,outputExists):
 			idir+'/ggZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
 			idir+'/ggZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
 			idir+'/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_ext_1000pb_weighted.root'],	
-	      'ggHbb': [idir+'/GluGluHToBB_M125_13TeV_powheg_pythia8_all_1000pb_weighted.root'],
+	      'ggHbb': [idir+'/GluGluHToBB_M125_13TeV_powheg_pythia8_CKKW_1000pb_weighted.root'],
                         # idir+'/GluGluHToBB_M125_13TeV_powheg_pythia8_ext_1000pb_weighted.root'],
               'VBFHbb': [idir+'/VBFHToBB_M_125_13TeV_powheg_pythia8_weightfix_all_1000pb_weighted.root'],
               'VHbb': [idir+'/ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
@@ -101,12 +102,12 @@ def main(options,args,outputExists):
                     idir+'/WJetsToLNu_HT_2500ToInf_13TeV_1000pb_weighted.root'],
               'TTbar':  [idir+'/TT_powheg_1000pb_weighted_v1204.root'], #Powheg is the new default
               'QCD': [idir+'/QCD_HT100to200_13TeV_1000pb_weighted.root',
-                      idir+'/QCD_HT200to300_13TeV_all_1000pb_weighted.root',
-                      idir+'/QCD_HT300to500_13TeV_all_1000pb_weighted.root',
-                      idir+'/QCD_HT500to700_13TeV_ext_1000pb_weighted.root',
-                      idir+'/QCD_HT700to1000_13TeV_ext_1000pb_weighted.root',
-                      idir+'/QCD_HT1000to1500_13TeV_all_1000pb_weighted.root',
-                      idir+'/QCD_HT1500to2000_13TeV_all_1000pb_weighted.root',
+                      idir+'/QCD_HT200to300_13TeV_1000pb_weighted.root',
+                      idir+'/QCD_HT300to500_13TeV_1000pb_weighted.root',
+                      idir+'/QCD_HT500to700_13TeV_1000pb_weighted.root',
+                      idir+'/QCD_HT700to1000_13TeV_1000pb_weighted.root',
+                      idir+'/QCD_HT1000to1500_13TeV_1000pb_weighted.root',
+                      idir+'/QCD_HT1500to2000_13TeV_1000pb_weighted.root',
                       idir+'/QCD_HT2000toInf_13TeV_1000pb_weighted.root'],
               'Phibb50': [idir+'/Spin0_ggPhi12j_g1_50_Scalar_13TeV_madgraph_1000pb_weighted.root'],
               'Phibb75': [idir+'/Spin0_ggPhi12j_g1_75_Scalar_13TeV_madgraph_1000pb_weighted.root'],
@@ -297,7 +298,7 @@ def main(options,args,outputExists):
             except:
                 pass
     elif isData:
-        plots = ['h_pt_ak8','h_msd_ak8','h_dbtag_ak8','h_n_ak4','h_n_ak4_dR0p8','h_t21_ak8','h_t32_ak8','h_n2b1sdddt_ak8','h_t21ddt_ak8','h_met','h_npv','h_eta_ak8','h_ht','h_dbtag_ak8_aftercut','h_n2b1sdddt_ak8_aftercut','h_rho_ak8']
+        plots = ['h_pt_ak8','h_msd_ak8','h_dbtag_ak8','h_n_ak4','h_n_ak4_dR0p8','h_t21_ak8','h_t32_ak8','h_n2b1sdddt_ak8','h_t21ddt_ak8','h_met','h_npv','h_eta_ak8','h_ht','h_dbtag_ak8_aftercut','h_n2b1sdddt_ak8_aftercut','h_rho_ak8','h_msd_ak8_dbtagCut']
     else:
         plots = []
         testSample = sampleContainer('test',[], 1, DBTMIN,lumi)
@@ -310,12 +311,19 @@ def main(options,args,outputExists):
             
     if not outputExists: 
         samples = ['ggHbb','VBFHbb','VHbb','ttHbb','QCD','SingleTop','Diboson','W','DY','TTbar']                      
-        for s in samples:
-            for tfile in tfiles[s]:
-                if not os.path.isfile(tfile):
-                    print 'error: %s does not exist'%tfile                 
-                    sys.exit()
+#        for s in samples:
+#            for tfile in tfiles[s]:
+#                if not os.path.isfile(tfile):
+#                    print 'error: %s does not exist'%tfile                 
+#                    sys.exit()
         print "Signals... "
+#        if isData:
+#            print "Data..."
+#        if isData and muonCR:
+#            dataSample = sampleContainer('muon',tfiles['muon'], 1, DBTMIN,lumi, isData, False, '((triggerBits&4)&&passJson)')
+#        elif isData:
+#            dataSample = sampleContainer('data',tfiles['data'], 1, DBTMIN,lumi, isData, False, '((triggerBits&2)&&passJson)')
+
         sigSamples = {}
         sigSamples['ggHbb']  = sampleContainer('ggHbb',tfiles['ggHbb']  , 1, DBTMIN,lumi) 
         sigSamples['VBFHbb'] = sampleContainer('VBFHbb',tfiles['VBFHbb'], 1, DBTMIN,lumi ) 
@@ -406,6 +414,7 @@ def main(options,args,outputExists):
             
         ofile = ROOT.TFile.Open(odir+'/Plots_1000pb_weighted.root','read')
         for plot in plots:
+	    print "!!!!!!!!!!!!!!!!!!!"
             hb = {}
             hs = {}
             hall = {}

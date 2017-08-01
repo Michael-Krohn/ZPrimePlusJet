@@ -29,12 +29,30 @@ def getDeltaEta(self, AK4ref_1, AK4ref_2):
                 DEta = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet2_eta[0])
         if (AK4ref_1 == 0 and AK4ref_2 == 3) or (AK4ref_1 == 3 and AK4ref_2 == 0):
                 DEta = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet3_eta[0])
+        if (AK4ref_1 == 0 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 0):
+                DEta = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet4_eta[0])
+        if (AK4ref_1 == 0 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 0):
+                DEta = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet4_eta[0])
         if (AK4ref_1 == 2 and AK4ref_2 == 1) or (AK4ref_1 == 1 and AK4ref_2 == 2):
                 DEta = abs(self.AK4Puppijet2_eta[0] - self.AK4Puppijet1_eta[0])
         if (AK4ref_1 == 3 and AK4ref_2 == 1) or (AK4ref_1 == 1 and AK4ref_2 == 3):
                 DEta = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet1_eta[0])
+        if (AK4ref_1 == 4 and AK4ref_2 == 1) or (AK4ref_1 == 1 and AK4ref_2 == 4):
+                DEta = abs(self.AK4Puppijet4_eta[0] - self.AK4Puppijet1_eta[0])
+        if (AK4ref_1 == 5 and AK4ref_2 == 1) or (AK4ref_1 == 1 and AK4ref_2 == 5):
+                DEta = abs(self.AK4Puppijet5_eta[0] - self.AK4Puppijet1_eta[0])
         if (AK4ref_1 == 3 and AK4ref_2 == 2) or (AK4ref_1 == 2 and AK4ref_2 == 3):
                 DEta = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet2_eta[0])
+        if (AK4ref_1 == 4 and AK4ref_2 == 2) or (AK4ref_1 == 2 and AK4ref_2 == 4):
+                DEta = abs(self.AK4Puppijet4_eta[0] - self.AK4Puppijet2_eta[0])
+        if (AK4ref_1 == 5 and AK4ref_2 == 2) or (AK4ref_1 == 2 and AK4ref_2 == 5):
+                DEta = abs(self.AK4Puppijet5_eta[0] - self.AK4Puppijet2_eta[0])
+        if (AK4ref_1 == 3 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 3):
+                DEta = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet4_eta[0])
+        if (AK4ref_1 == 3 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 3):
+                DEta = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet5_eta[0])
+        if (AK4ref_1 == 4 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 4):
+                DEta = abs(self.AK4Puppijet4_eta[0] - self.AK4Puppijet5_eta[0])
 
         return DEta
 
@@ -54,6 +72,14 @@ def getMjj(self, AK4ref_1, AK4ref_2):
                 AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
                 AK4_1.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
                 mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 0 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 0):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet4_pt[0],self.AK4Puppijet4_eta[0],self.AK4Puppijet4_phi[0],self.AK4Puppijet4_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 0 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 0):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet5_pt[0],self.AK4Puppijet5_eta[0],self.AK4Puppijet5_phi[0],self.AK4Puppijet5_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
 	if (AK4ref_1 == 1 and AK4ref_2 == 2) or (AK4ref_1 == 2 and AK4ref_2 == 1):
                 AK4_0.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
                 AK4_1.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
@@ -62,15 +88,43 @@ def getMjj(self, AK4ref_1, AK4ref_2):
                 AK4_0.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
                 AK4_1.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
                 mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 1 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 1):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet4_pt[0],self.AK4Puppijet4_eta[0],self.AK4Puppijet4_phi[0],self.AK4Puppijet4_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 1 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 1):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet5_pt[0],self.AK4Puppijet5_eta[0],self.AK4Puppijet5_phi[0],self.AK4Puppijet5_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
         if (AK4ref_1 == 2 and AK4ref_2 == 3) or (AK4ref_1 == 3 and AK4ref_2 == 2):
                 AK4_0.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
                 AK4_1.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 2 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 2):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet4_pt[0],self.AK4Puppijet4_eta[0],self.AK4Puppijet4_phi[0],self.AK4Puppijet4_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 2 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 2):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet5_pt[0],self.AK4Puppijet5_eta[0],self.AK4Puppijet5_phi[0],self.AK4Puppijet5_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 3 and AK4ref_2 == 4) or (AK4ref_1 == 4 and AK4ref_2 == 3):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet4_pt[0],self.AK4Puppijet4_eta[0],self.AK4Puppijet4_phi[0],self.AK4Puppijet4_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 3 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 3):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet5_pt[0],self.AK4Puppijet5_eta[0],self.AK4Puppijet5_phi[0],self.AK4Puppijet5_mass[0])
+                mjj = (AK4_0 + AK4_1).M()
+        if (AK4ref_1 == 4 and AK4ref_2 == 5) or (AK4ref_1 == 5 and AK4ref_2 == 4):
+                AK4_0.SetPtEtaPhiM(self.AK4Puppijet4_pt[0],self.AK4Puppijet4_eta[0],self.AK4Puppijet4_phi[0],self.AK4Puppijet4_mass[0])
+                AK4_1.SetPtEtaPhiM(self.AK4Puppijet5_pt[0],self.AK4Puppijet5_eta[0],self.AK4Puppijet5_phi[0],self.AK4Puppijet5_mass[0])
                 mjj = (AK4_0 + AK4_1).M()
 
 	return mjj
 
 #########################################################################################################
-class sampleContainer:
+class sampleContainer_Heppy:
     def __init__(self, name, fn, sf=1, DBTAGCUTMIN=-99., lumi=1, isData=False, fillCA15=False, cutFormula='1',
                  minBranches=False):
         self._name = name
@@ -78,14 +132,14 @@ class sampleContainer:
         self._fn = fn
         if len(fn) > 0:
             self._tf = ROOT.TFile.Open(self._fn[0])
-        self._tt = ROOT.TChain('otree')
+        self._tt = ROOT.TChain('myTree')
         for fn in self._fn: self._tt.Add(fn)
         self._sf = sf
         self._lumi = lumi
         warnings.filterwarnings(action='ignore', category=RuntimeWarning, message='creating converter.*')
         self._cutFormula = ROOT.TTreeFormula("cutFormula",
-                                             "(" + cutFormula + ")&&(AK8Puppijet0_pt>%f||AK8Puppijet0_pt_JESDown>%f||AK8Puppijet0_pt_JESUp>%f||AK8Puppijet0_pt_JERUp>%f||AK8Puppijet0_pt_JERDown>%f)" % (
-                                                 PTCUTMUCR, PTCUTMUCR, PTCUTMUCR, PTCUTMUCR, PTCUTMUCR), self._tt)
+                                             "(" + cutFormula + ")&&(jet1pt>%f)" % (
+                                                 PTCUTMUCR), self._tt)
         self._isData = isData
         # print lumi
         # print self._NEv.GetBinContent(1)
@@ -213,84 +267,25 @@ class sampleContainer:
 
         self._minBranches = minBranches
         # set branch statuses and addresses
-        self._branches = [('AK8Puppijet0_msd', 'd', -999), ('AK8Puppijet0_pt', 'd', -999),
-                          ('AK8Puppijet0_pt_JERUp', 'd', -999), ('AK8Puppijet0_pt_JERDown', 'd', -999),
-                          ('AK8Puppijet0_pt_JESUp', 'd', -999), ('AK8Puppijet0_pt_JESDown', 'd', -999),
-                          ('AK8Puppijet0_eta', 'd', -999), ('AK8Puppijet0_phi', 'd', -999),
-                          ('AK8Puppijet0_tau21', 'd', -999), ('AK8Puppijet0_tau32', 'd', -999),
-                          ('AK8Puppijet0_N2sdb1', 'd', -999), ('puWeight', 'f', 0), ('scale1fb', 'f', 0),
-                          ('AK8Puppijet0_doublecsv', 'd', -999),
-                          ('kfactor', 'f', 0), ('kfactorNLO', 'f', 0), ('nAK4PuppijetsPt30', 'i', -999),
-                          ('AK4Puppijet1_eta', 'd', -999), ('AK4Puppijet0_eta', 'd', -999),
-                          ('AK4Puppijet1_phi', 'd', -999), ('AK4Puppijet0_phi', 'd', -999),
-                          ('AK4Puppijet1_pt', 'd', -999), ('AK4Puppijet0_pt', 'd', -999),
-                          ('AK4Puppijet1_mass', 'd', -999), ('AK4Puppijet0_mass', 'd', -999),
-                          ('AK4Puppijet3_pt', 'd', -999), ('AK4Puppijet2_pt', 'd', -999),
-                          ('AK4Puppijet3_mass', 'd', -999), ('AK4Puppijet2_mass', 'd', -999),
-                          ('AK4Puppijet3_eta', 'd', -999), ('AK4Puppijet2_eta', 'd', -999),
-                          ('AK4Puppijet3_phi', 'd', -999), ('AK4Puppijet2_phi', 'd', -999),
-                          ('AK4Puppijet1_csv', 'd', -999), ('AK4Puppijet0_csv', 'd', -999),
-                          ('AK4Puppijet3_csv', 'd', -999), ('AK4Puppijet2_csv', 'd', -999),
-			  ('nAK4PuppijetsPt30', 'i', -999),
-                          ('nAK4PuppijetsPt30dR08_0', 'i', -999),
-                          ('nAK4PuppijetsPt30dR08jesUp_0', 'i', -999), ('nAK4PuppijetsPt30dR08jesDown_0', 'i', -999),
-                          ('nAK4PuppijetsPt30dR08jerUp_0', 'i', -999), ('nAK4PuppijetsPt30dR08jerDown_0', 'i', -999),
-                          ('nAK4PuppijetsMPt50dR08_0', 'i', -999),
-                          ('AK8Puppijet0_ratioCA15_04', 'd', -999),
-                          ('pfmet', 'f', -999), ('pfmetphi', 'f', -999), ('puppet', 'f', -999),
-                          ('puppetphi', 'f', -999),
-                          ('MetXCorrjesUp', 'd', -999), ('MetXCorrjesDown', 'd', -999), ('MetYCorrjesUp', 'd', -999),
-                          ('MetYCorrjesDown', 'd', -999),
-                          ('MetXCorrjerUp', 'd', -999), ('MetXCorrjerDown', 'd', -999), ('MetYCorrjerUp', 'd', -999),
-                          ('MetYCorrjerDown', 'd', -999),
-                          ('neleLoose', 'i', -999), ('nmuLoose', 'i', -999), ('ntau', 'i', -999),
-                          ('nphoLoose', 'i', -999),
-                          ('triggerBits', 'i', 1), ('passJson', 'i', 1), ('vmuoLoose0_pt', 'd', -999),
-                          ('vmuoLoose0_eta', 'd', -999), ('vmuoLoose0_phi', 'd', -999),
-                          ('npv', 'i', 1), ('npu', 'i', 1),
-                          ('AK8Puppijet0_isTightVJet', 'i', 0)
+        self._branches = [('jet1_puppi_msoftdrop_raw', 'f', -999), ('jet1pt', 'f', -999),
+                          ('jet1eta', 'f', -999), ('jet1phi', 'f', -999),
+                          ('jet1_puppi_tau21', 'f', -999), ('puWeights', 'f', 0), ('scale1fb', 'f', 0),
+                          ('jet1bbtag', 'f', -999),('jet1tau21', 'f', -999),
+                          ('AK4Puppijet1_eta', 'f', -999), ('AK4Puppijet0_eta', 'f', -999),
+                          ('AK4Puppijet1_phi', 'f', -999), ('AK4Puppijet0_phi', 'f', -999),
+                          ('AK4Puppijet1_pt', 'f', -999), ('AK4Puppijet0_pt', 'f', -999),
+                          ('AK4Puppijet1_mass', 'f', -999), ('AK4Puppijet0_mass', 'f', -999),
+                          ('AK4Puppijet3_eta', 'f', -999), ('AK4Puppijet2_eta', 'f', -999),
+                          ('AK4Puppijet3_phi', 'f', -999), ('AK4Puppijet2_phi', 'f', -999),
+                          ('AK4Puppijet3_pt', 'f', -999), ('AK4Puppijet2_pt', 'f', -999),
+                          ('AK4Puppijet3_mass', 'f', -999), ('AK4Puppijet2_mass', 'f', -999),
+                          ('AK4Puppijet4_eta', 'f', -999), ('AK4Puppijet5_eta', 'f', -999),
+                          ('AK4Puppijet4_phi', 'f', -999), ('AK4Puppijet5_phi', 'f', -999),
+                          ('AK4Puppijet4_pt', 'f', -999), ('AK4Puppijet5_pt', 'f', -999),
+                          ('AK4Puppijet4_mass', 'f', -999), ('AK4Puppijet5_mass', 'f', -999),
+                          ('nAK4PuppijetsPt30', 'f', -999),
+                          ('MET', 'f', -999),('vtype', 'f', -999),
                           ]
-        if not self._minBranches:
-            self._branches.extend([('nAK4PuppijetsfwdPt30', 'i', -999), ('nAK4PuppijetsLPt50dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsTPt50dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsLPt100dR08_0', 'i', -999), ('nAK4PuppijetsMPt100dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsTPt100dR08_ 0', 'i', -999),
-                                   ('nAK4PuppijetsLPt150dR08_0', 'i', -999), ('nAK4PuppijetsMPt150dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsTPt150dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsLPt50dR08_1', 'i', -999), ('nAK4PuppijetsMPt50dR08_1', 'i', -999),
-                                   ('nAK4PuppijetsTPt50dR08_1', 'i', -999),
-                                   ('nAK4PuppijetsLPt100dR08_1', 'i', -999), ('nAK4PuppijetsMPt100dR08_1', 'i', -999),
-                                   ('nAK4PuppijetsTPt100dR08_ 1', 'i', -999),
-                                   ('nAK4PuppijetsLPt150dR08_1', 'i', -999), ('nAK4PuppijetsMPt150dR08_1', 'i', -999),
-                                   ('nAK4PuppijetsTPt150dR08_1', 'i', -999),
-                                   ('nAK4PuppijetsLPt50dR08_2', 'i', -999), ('nAK4PuppijetsMPt50dR08_2', 'i', -999),
-                                   ('nAK4PuppijetsTPt50dR08_2', 'i', -999),
-                                   ('nAK4PuppijetsLPt100dR08_2', 'i', -999), ('nAK4PuppijetsMPt100dR08_2', 'i', -999),
-                                   ('nAK4PuppijetsTPt100dR08_ 1', 'i', -999),
-                                   ('nAK4PuppijetsLPt150dR08_2', 'i', -999), ('nAK4PuppijetsMPt150dR08_2', 'i', -999),
-                                   ('nAK4PuppijetsTPt150dR08_2', 'i', -999),
-                                   ('nAK4PuppijetsLPt150dR08_0', 'i', -999), ('nAK4PuppijetsMPt150dR08_0', 'i', -999),
-                                   ('nAK4PuppijetsTPt150dR08_0', 'i', -999),
-                                   ('AK8Puppijet1_pt', 'd', -999), ('AK8Puppijet2_pt', 'd', -999),
-                                   ('AK8Puppijet1_tau21', 'd', -999), ('AK8Puppijet2_tau21', 'd', -999),
-                                   ('AK8Puppijet1_msd', 'd', -999), ('AK8Puppijet2_msd', 'd', -999),
-                                   ('AK8Puppijet1_doublecsv', 'd', -999), ('AK8Puppijet2_doublecsv', 'i', -999),
-                                   ('AK8Puppijet1_isTightVJet', 'i', 0),
-                                   ('AK8Puppijet2_isTightVJet', 'i', 0), ('AK4Puppijet3_pt', 'f', 0),
-                                   ('AK4Puppijet2_pt', 'f', 0), ('AK4Puppijet1_pt', 'f', 0),
-                                   ('AK4Puppijet0_pt', 'f', 0),
-                                   ('AK4Puppijet3_eta', 'f', 0), ('AK4Puppijet2_eta', 'f', 0)
-#                                   ('AK4Puppijet1_eta', 'f', 0), ('AK4Puppijet0_eta', 'f', 0)
-                                   ])
-        if not self._isData:
-            self._branches.extend([('genMuFromW', 'i', -999), ('genEleFromW', 'i', -999), ('genTauFromW', 'i', -999)])
-            self._branches.extend(
-                [('genVPt', 'f', -999), ('genVEta', 'f', -999), ('genVPhi', 'f', -999), ('genVMass', 'f', -999),
-                 ('topPtWeight', 'f', -999), ('topPt', 'f', -999), ('antitopPt', 'f', -999)])
-
-        if self._fillCA15:
-            self._branches.extend(
-                [('CA15Puppijet0_msd', 'd', -999), ('CA15Puppijet0_pt', 'd', -999), ('CA15Puppijet0_tau21', 'd', -999)])
 
         self._tt.SetBranchStatus("*", 0)
         for branch in self._branches:
@@ -299,10 +294,6 @@ class sampleContainer:
             setattr(self, branch[0].replace(' ', ''), array.array(branch[1], [branch[2]]))
             self._tt.SetBranchAddress(branch[0], getattr(self, branch[0].replace(' ', '')))
 
-        # x = array.array('d',[0])
-        # self._tt.SetBranchAddress( "h_n_ak4", n_ak4  )
-
-        # define histograms
         histos1d = {            
             'h_npv': ["h_" + self._name + "_npv", "; number of PV;;", 100, 0, 100],
             'h_msd_ak8_topR6_N2_pass': ["h_" + self._name + "_msd_ak8_topR6_N2_pass", "; AK8 m_{SD}^{PUPPI} (GeV);", 23,
@@ -429,10 +420,10 @@ class sampleContainer:
                 'h_ak4_multiplicity_pT100': ["h_" + self._name + "_ak4_multiplicity_pT100", "; AK4 jets;", 5, 0,5],
 
                 'h_mjj_ak4_qq': ["h_" + self._name + "_mjj_ak4_qq", "; m_{qq} GeV;", 23, 0,500],
-                'h_mjj_ak4_qq_pT30': ["h_" + self._name + "_mjj_ak4_qq_pT30", "; m_{qq} GeV;", 23, 0,500],
+                'h_mjj_ak4_qq_pT30': ["h_" + self._name + "_mjj_ak4_qq_pT30", "; m_{qq} GeV;", 23, 0,200],
                 'h_mjj_ak4_qq_pT50': ["h_" + self._name + "_mjj_ak4_qq_pT50", "; m_{qq} GeV;", 23, 0,500],
                 'h_mjj_ak4_qq_pT70': ["h_" + self._name + "_mjj_ak4_qq_pT70", "; m_{qq} GeV;", 23, 0,500],
-                'h_mjj_ak4_qq_pT100': ["h_" + self._name + "_mjj_ak4_qq_pT100", "; m_{qq} GeV;", 23, 0,500],
+                'h_mjj_ak4_qq_pT100': ["h_" + self._name + "_mjj_ak4_qq_pT100", "; m_{qq} GeV;", 23, 0,3000],
                 'h_dEta_ak4': ["h_" + self._name + "_dEta_ak4", "; #Delta#eta(AK4_{1},AK4_{2});", 23, 0,6.4],
                 'h_dEta_ak4_nonH': ["h_" + self._name + "_dEta_ak4_nonH", "; #Delta#eta(AK4_{1},AK4_{2});", 23, -2,6.4],
                 'h_msd_ak8_4ak4': ["h_" + self._name + "_msd_ak8_4ak4", "; #Delta#eta(AK4_{1},AK4_{2});", 23, 40, 201],
@@ -856,6 +847,7 @@ class sampleContainer:
     def loop(self):
         # looping
         nent = self._tt.GetEntries()
+	print "nEvents"
         print nent
         cut = []
         cut = [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
@@ -873,21 +865,18 @@ class sampleContainer:
                     break
             if not selected: continue
 
-	    if self._isData:
-		if i % 15 != 0: continue
-
             self._tt.GetEntry(i)
 
             if (nent / 100 > 0 and i % (1 * nent / 100) == 0):
                 sys.stdout.write("\r[" + "=" * int(20 * i / nent) + " " + str(round(100. * i / nent, 0)) + "% done")
                 sys.stdout.flush()
 
-            puweight = self.puWeight[0] #corrected
-            nPuForWeight = min(self.npu[0], 49.5)
+            puweight = self.puWeights[0] #corrected
+#            nPuForWeight = min(self.npu[0], 49.5)
 	    #$print(puweight,self._puw.GetBinContent(self._puw.FindBin(nPuForWeight)))
             #puweight = self._puw.GetBinContent(self._puw.FindBin(nPuForWeight))
-            puweight_up = self._puw_up.GetBinContent(self._puw_up.FindBin(nPuForWeight))
-            puweight_down = self._puw_down.GetBinContent(self._puw_down.FindBin(nPuForWeight))
+#            puweight_up = self._puw_up.GetBinContent(self._puw_up.FindBin(nPuForWeight))
+#            puweight_down = self._puw_down.GetBinContent(self._puw_down.FindBin(nPuForWeight))
             # print(self.puWeight[0],puweight,puweight_up,puweight_down)
             fbweight = self.scale1fb[0] * self._lumi
             # if self._name=='tqq' or 'TTbar' in self._name:
@@ -903,10 +892,10 @@ class sampleContainer:
                 vjetsKF = self.kfactor[0] * 1.35 * ptKF  # ==1 for not V+jets events
             elif self._name == 'zqq' or self._name == 'DY':
                 # print self._name
-                vjetsKF = self.kfactor[0] * 1.45  # ==1 for not V+jets events
+                vjetsKF = 1.45  # ==1 for not V+jets events
             # trigger weight
-            massForTrig = min(self.AK8Puppijet0_msd[0], 300.)
-            ptForTrig = max(200., min(self.AK8Puppijet0_pt[0], 1000.))
+            massForTrig = min(self.jet1_puppi_msoftdrop_raw[0], 300.)
+            ptForTrig = max(200., min(self.jet1pt[0], 1000.))
             trigweight = self._trig_eff.GetEfficiency(self._trig_eff.FindFixBin(massForTrig, ptForTrig))
             trigweightUp = trigweight + self._trig_eff.GetEfficiencyErrorUp(
                 self._trig_eff.FindFixBin(massForTrig, ptForTrig))
@@ -921,59 +910,59 @@ class sampleContainer:
             weight = puweight * fbweight * self._sf * vjetsKF * trigweight
             weight_triggerUp = puweight * fbweight * self._sf * vjetsKF * trigweightUp
             weight_triggerDown = puweight * fbweight * self._sf * vjetsKF * trigweightDown
-            weight_pu_up = puweight_up * fbweight * self._sf * vjetsKF * trigweight
-            weight_pu_down = puweight_down * fbweight * self._sf * vjetsKF * trigweight
+#            weight_pu_up = puweight_up * fbweight * self._sf * vjetsKF * trigweight
+#            weight_pu_down = puweight_down * fbweight * self._sf * vjetsKF * trigweight
 
             mutrigweight = 1
             mutrigweightDown = 1
             mutrigweightUp = 1
-            if self.nmuLoose[0] > 0:
-                muPtForTrig = max(52., min(self.vmuoLoose0_pt[0], 700.))
-                muEtaForTrig = min(abs(self.vmuoLoose0_eta[0]), 2.3)
-                mutrigweight = self._mutrig_eff.GetBinContent(self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
-                mutrigweightUp = mutrigweight + self._mutrig_eff.GetBinError(
-                    self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
-                mutrigweightDown = mutrigweight - self._mutrig_eff.GetBinError(
-                    self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
-                if mutrigweight <= 0 or mutrigweightDown <= 0 or mutrigweightUp <= 0:
-                    print 'mutrigweights are %f, %f, %f, setting all to 1' % (
-                    mutrigweight, mutrigweightUp, mutrigweightDown)
-                    mutrigweight = 1
-                    mutrigweightDown = 1
-                    mutrigweightUp = 1
+#            if self.nmuLoose[0] > 0:
+#                muPtForTrig = max(52., min(self.vmuoLoose0_pt[0], 700.))
+#                muEtaForTrig = min(abs(self.vmuoLoose0_eta[0]), 2.3)
+#                mutrigweight = self._mutrig_eff.GetBinContent(self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
+#                mutrigweightUp = mutrigweight + self._mutrig_eff.GetBinError(
+#                    self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
+#                mutrigweightDown = mutrigweight - self._mutrig_eff.GetBinError(
+#                    self._mutrig_eff.FindBin(muPtForTrig, muEtaForTrig))
+#                if mutrigweight <= 0 or mutrigweightDown <= 0 or mutrigweightUp <= 0:
+#                    print 'mutrigweights are %f, %f, %f, setting all to 1' % (
+#                    mutrigweight, mutrigweightUp, mutrigweightDown)
+#                    mutrigweight = 1
+#                    mutrigweightDown = 1
+#                    mutrigweightUp = 1
 
             muidweight = 1
             muidweightDown = 1
             muidweightUp = 1
-            if self.nmuLoose[0] > 0:
-                muPtForId = max(20., min(self.vmuoLoose0_pt[0], 100.))
-                muEtaForId = min(abs(self.vmuoLoose0_eta[0]), 2.3)
-                muidweight = self._muid_eff.GetBinContent(self._muid_eff.FindBin(muPtForId, muEtaForId))
-                muidweightUp = muidweight + self._muid_eff.GetBinError(self._muid_eff.FindBin(muPtForId, muEtaForId))
-                muidweightDown = muidweight - self._muid_eff.GetBinError(self._muid_eff.FindBin(muPtForId, muEtaForId))
-                if muidweight <= 0 or muidweightDown <= 0 or muidweightUp <= 0:
-                    print 'muidweights are %f, %f, %f, setting all to 1' % (muidweight, muidweightUp, muidweightDown)
-                    muidweight = 1
-                    muidweightDown = 1
-                    muidweightUp = 1
+#            if self.nmuLoose[0] > 0:
+#                muPtForId = max(20., min(self.vmuoLoose0_pt[0], 100.))
+#                muEtaForId = min(abs(self.vmuoLoose0_eta[0]), 2.3)
+#                muidweight = self._muid_eff.GetBinContent(self._muid_eff.FindBin(muPtForId, muEtaForId))
+#                muidweightUp = muidweight + self._muid_eff.GetBinError(self._muid_eff.FindBin(muPtForId, muEtaForId))
+#                muidweightDown = muidweight - self._muid_eff.GetBinError(self._muid_eff.FindBin(muPtForId, muEtaForId))
+#                if muidweight <= 0 or muidweightDown <= 0 or muidweightUp <= 0:
+#                    print 'muidweights are %f, %f, %f, setting all to 1' % (muidweight, muidweightUp, muidweightDown)
+#                    muidweight = 1
+#                    muidweightDown = 1
+#                    muidweightUp = 1
 
             muisoweight = 1
             muisoweightDown = 1
             muisoweightUp = 1
-            if self.nmuLoose[0] > 0:
-                muPtForIso = max(20., min(self.vmuoLoose0_pt[0], 100.))
-                muEtaForIso = min(abs(self.vmuoLoose0_eta[0]), 2.3)
-                muisoweight = self._muiso_eff.GetBinContent(self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
-                muisoweightUp = muisoweight + self._muiso_eff.GetBinError(
-                    self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
-                muisoweightDown = muisoweight - self._muiso_eff.GetBinError(
-                    self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
-                if muisoweight <= 0 or muisoweightDown <= 0 or muisoweightUp <= 0:
-                    print 'muisoweights are %f, %f, %f, setting all to 1' % (
-                    muisoweight, muisoweightUp, muisoweightDown)
-                    muisoweight = 1
-                    muisoweightDown = 1
-                    muisoweightUp = 1
+#            if self.nmuLoose[0] > 0:
+#                muPtForIso = max(20., min(self.vmuoLoose0_pt[0], 100.))
+#                muEtaForIso = min(abs(self.vmuoLoose0_eta[0]), 2.3)
+#                muisoweight = self._muiso_eff.GetBinContent(self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
+#                muisoweightUp = muisoweight + self._muiso_eff.GetBinError(
+#                    self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
+#                muisoweightDown = muisoweight - self._muiso_eff.GetBinError(
+#                    self._muiso_eff.FindBin(muPtForIso, muEtaForIso))
+#                if muisoweight <= 0 or muisoweightDown <= 0 or muisoweightUp <= 0:
+#                    print 'muisoweights are %f, %f, %f, setting all to 1' % (
+#                    muisoweight, muisoweightUp, muisoweightDown)
+#                    muisoweight = 1
+#                    muisoweightDown = 1
+#                    muisoweightUp = 1
 
             weight_mu = puweight * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweight
             weight_mutriggerUp = puweight * fbweight * self._sf * vjetsKF * mutrigweightUp * muidweight * muisoweight
@@ -982,8 +971,8 @@ class sampleContainer:
             weight_muidDown = puweight * fbweight * self._sf * vjetsKF * mutrigweight * muidweightDown * muisoweight
             weight_muisoUp = puweight * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweightUp
             weight_muisoDown = puweight * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweightDown
-            weight_mu_pu_up = puweight_up * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweight
-            weight_mu_pu_down = puweight_down * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweight
+#            weight_mu_pu_up = puweight_up * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweight
+#            weight_mu_pu_down = puweight_down * fbweight * self._sf * vjetsKF * mutrigweight * muidweight * muisoweight
 
             if self._isData:
                 weight = 1
@@ -1002,69 +991,69 @@ class sampleContainer:
                 weight_mu_pu_down = 1
 
             ##### AK8 info
-            jmsd_8_raw = self.AK8Puppijet0_msd[0]
-            jpt_8 = self.AK8Puppijet0_pt[0]
-            jpt_8_JERUp = self.AK8Puppijet0_pt_JERUp[0]
-            jpt_8_JERDown = self.AK8Puppijet0_pt_JERDown[0]
-            jpt_8_JESUp = self.AK8Puppijet0_pt_JESUp[0]
-            jpt_8_JESDown = self.AK8Puppijet0_pt_JESDown[0]
-            jeta_8 = self.AK8Puppijet0_eta[0]
-            jmsd_8 = self.AK8Puppijet0_msd[0] * self.PUPPIweight(jpt_8, jeta_8)
-            jphi_8 = self.AK8Puppijet0_phi[0]
+            jmsd_8_raw = self.jet1_puppi_msoftdrop_raw[0]
+            jpt_8 = self.jet1pt[0]
+#            jpt_8_JERUp = self.jet1_puppi_pt_JERUp[0]
+#            jpt_8_JERDown = self.jet1_puppi_pt_JERDown[0]
+#            jpt_8_JESUp = self.jet1_puppi_pt_JESUp[0]
+#            jpt_8_JESDown = self.jet1_puppi_pt_JESDown[0]
+            jeta_8 = self.jet1eta[0]
+            jmsd_8 = self.jet1_puppi_msoftdrop_raw[0] * self.PUPPIweight(jpt_8, jeta_8)
+            jphi_8 = self.jet1phi[0]
             if not self._minBranches:
-                jpt_8_sub1 = self.AK8Puppijet1_pt[0]
-                jpt_8_sub2 = self.AK8Puppijet2_pt[0]
+                jpt_8_sub1 = self.jet1pt[0]
+#                jpt_8_sub2 = self.AK8Puppijet2_pt[0]
             if jmsd_8 <= 0: jmsd_8 = 0.01
             rh_8 = math.log(jmsd_8 * jmsd_8 / jpt_8 / jpt_8)  # tocheck here
             rhP_8 = math.log(jmsd_8 * jmsd_8 / jpt_8)
-            jt21_8 = self.AK8Puppijet0_tau21[0]
-            jt32_8 = self.AK8Puppijet0_tau32[0]
+            jt21_8 = self.jet1tau21[0]
+#            jt32_8 = self.AK8Puppijet0_tau32[0]
             jt21P_8 = jt21_8 + 0.063 * rhP_8
-            jtN2b1sd_8 = self.AK8Puppijet0_N2sdb1[0]
+#            jtN2b1sd_8 = self.AK8Puppijet0_N2sdb1[0]
 
 	    #AK4 info
 	    jDeta_4 = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet1_eta[0])
 
-	    jDphi_0 = self.AK4Puppijet0_phi[0] - self.AK8Puppijet0_phi[0]
+	    jDphi_0 = self.AK4Puppijet0_phi[0] - self.jet1phi[0]
 	    if jDphi_0 >= math.pi:
 		jDphi_0 -= 2.*math.pi
 	    elif jDphi_0 < -math.pi:
 		jDphi_0 += 2.*math.pi
 
-	    DeltaR_0 = math.sqrt((self.AK4Puppijet0_eta[0] - self.AK8Puppijet0_eta[0])**2 + (jDphi_0)**2)
+	    DeltaR_0 = math.sqrt((self.AK4Puppijet0_eta[0] - self.jet1eta[0])**2 + (jDphi_0)**2)
 
             if DeltaR_0 > math.pi:
                 DeltaR_0 = 2*math.pi - DeltaR_0
 
-            jDphi_1 = self.AK4Puppijet1_phi[0] - self.AK8Puppijet0_phi[0]
+            jDphi_1 = self.AK4Puppijet1_phi[0] - self.jet1phi[0]
             if jDphi_1 >= math.pi:
                 jDphi_1 -= 2.*math.pi
 	    elif jDphi_1 < -math.pi:
 		jDphi_1 += 2.*math.pi
 
-            DeltaR_1 = math.sqrt((self.AK4Puppijet1_eta[0] - self.AK8Puppijet0_eta[0])**2 + (jDphi_1)**2)
+            DeltaR_1 = math.sqrt((self.AK4Puppijet1_eta[0] - self.jet1eta[0])**2 + (jDphi_1)**2)
 
             if DeltaR_1 > math.pi:
                 DeltaR_1 = 2*math.pi - DeltaR_1
 
-            jDphi_2 = self.AK4Puppijet2_phi[0] - self.AK8Puppijet0_phi[0]
+            jDphi_2 = self.AK4Puppijet2_phi[0] - self.jet1phi[0]
             if jDphi_2 >= math.pi:
                 jDphi_2 -= 2.*math.pi
             elif jDphi_2 < -math.pi:
                 jDphi_2 += 2.*math.pi
 
-            DeltaR_2 = math.sqrt((self.AK4Puppijet2_eta[0] - self.AK8Puppijet0_eta[0])**2 + (jDphi_2)**2)
+            DeltaR_2 = math.sqrt((self.AK4Puppijet2_eta[0] - self.jet1eta[0])**2 + (jDphi_2)**2)
 
             if DeltaR_2 > math.pi:
                 DeltaR_2 = 2*math.pi - DeltaR_2
 
-            jDphi_3 = self.AK4Puppijet3_phi[0] - self.AK8Puppijet0_phi[0]
+            jDphi_3 = self.AK4Puppijet3_phi[0] - self.jet1phi[0]
             if jDphi_3 >= math.pi:
                 jDphi_3 -= 2.*math.pi
             elif jDphi_3 < -math.pi:
                 jDphi_3 += 2.*math.pi
 
-            DeltaR_3 = math.sqrt((self.AK4Puppijet3_eta[0] - self.AK8Puppijet0_eta[0])**2 + (jDphi_3)**2)
+            DeltaR_3 = math.sqrt((self.AK4Puppijet3_eta[0] - self.jet1eta[0])**2 + (jDphi_3)**2)
 
             if DeltaR_3 > math.pi:
                 DeltaR_3 = 2*math.pi - DeltaR_3
@@ -1114,6 +1103,18 @@ class sampleContainer:
                 else:
                         AK4ForwardJet1_pT30 = 3
                 AK4jetMultiplicity_30 += 1
+            if self.AK4Puppijet4_pt[0] > 30. and  abs(self.AK4Puppijet4_eta[0]) > 2.5:
+                if AK4jetMultiplicity_30 == 1:
+                        AK4ForwardJet2_pT30 = 4
+                else:
+                        AK4ForwardJet1_pT30 = 4
+                AK4jetMultiplicity_30 += 1
+            if self.AK4Puppijet5_pt[0] > 30. and  abs(self.AK4Puppijet5_eta[0]) > 2.5:
+                if AK4jetMultiplicity_30 == 1:
+                        AK4ForwardJet2_pT30 = 5
+                else:
+                        AK4ForwardJet1_pT30 = 5
+                AK4jetMultiplicity_30 += 1
 
             if self.AK4Puppijet0_pt[0] > 50. and  abs(self.AK4Puppijet0_eta[0]) > 2.5:
                 AK4jetMultiplicity_50 += 1
@@ -1135,6 +1136,18 @@ class sampleContainer:
                         AK4ForwardJet2_pT50 = 3
                 else:
                         AK4ForwardJet1_pT50 = 3
+                AK4jetMultiplicity_50 += 1
+            if self.AK4Puppijet4_pt[0] > 50. and  abs(self.AK4Puppijet4_eta[0]) > 2.5:
+                if AK4jetMultiplicity_50 == 1:
+                        AK4ForwardJet2_pT50 = 4
+                else:
+                        AK4ForwardJet1_pT50 = 4
+                AK4jetMultiplicity_50 += 1
+            if self.AK4Puppijet5_pt[0] > 50. and  abs(self.AK4Puppijet5_eta[0]) > 2.5:
+                if AK4jetMultiplicity_50 == 1:
+                        AK4ForwardJet2_pT50 = 5
+                else:
+                        AK4ForwardJet1_pT50 = 5
                 AK4jetMultiplicity_50 += 1
 
             if self.AK4Puppijet0_pt[0] > 70. and  abs(self.AK4Puppijet0_eta[0]) > 2.5:
@@ -1158,6 +1171,18 @@ class sampleContainer:
                 else:
                         AK4ForwardJet1_pT70 = 3
                 AK4jetMultiplicity_70 += 1
+            if self.AK4Puppijet4_pt[0] > 70. and  abs(self.AK4Puppijet4_eta[0]) > 2.5:
+                if AK4jetMultiplicity_70 == 1:
+                        AK4ForwardJet2_pT70 = 4
+                else:
+                        AK4ForwardJet1_pT70 = 4
+                AK4jetMultiplicity_70 += 1
+            if self.AK4Puppijet5_pt[0] > 70. and  abs(self.AK4Puppijet5_eta[0]) > 2.5:
+                if AK4jetMultiplicity_70 == 1:
+                        AK4ForwardJet2_pT70 = 5
+                else:
+                        AK4ForwardJet1_pT70 = 5
+                AK4jetMultiplicity_70 += 1
 
             if self.AK4Puppijet0_pt[0] > 100. and  abs(self.AK4Puppijet0_eta[0]) > 2.5:
                 AK4jetMultiplicity_100 += 1
@@ -1180,6 +1205,18 @@ class sampleContainer:
                 else:
                         AK4ForwardJet1_pT100 = 3
                 AK4jetMultiplicity_100 += 1
+            if self.AK4Puppijet4_pt[0] > 100. and  abs(self.AK4Puppijet4_eta[0]) > 2.5:
+                if AK4jetMultiplicity_100 == 1:
+                        AK4ForwardJet2_pT100 = 4
+                else:
+                        AK4ForwardJet1_pT100 = 4
+                AK4jetMultiplicity_100 += 1
+            if self.AK4Puppijet5_pt[0] > 100. and  abs(self.AK4Puppijet5_eta[0]) > 2.5:
+                if AK4jetMultiplicity_100 == 1:
+                        AK4ForwardJet2_pT100 = 5
+                else:
+                        AK4ForwardJet1_pT100 = 5
+                AK4jetMultiplicity_100 += 1
 
 
 	    jDeta_ak4_pT30 = -1.
@@ -1190,6 +1227,11 @@ class sampleContainer:
             mjj_AK4_qq_pT70 = -99.
             jDeta_ak4_pT100 = -1.
             mjj_AK4_qq_pT100 = -99.
+#	    if AK4jetMultiplicity_30 == 2:
+#		print "AK4jetMultiplicity_30"
+#		print AK4jetMultiplicity_30
+#		print AK4ForwardJet1_pT30
+#		print AK4ForwardJet2_pT30
 	    if AK4jetMultiplicity_30 == 2:
 		if AK4ForwardJet1_pT30 == 0 and AK4ForwardJet2_pT30 == 1:
                         jDeta_ak4_pT30 = getDeltaEta(self,0,1)
@@ -1200,15 +1242,43 @@ class sampleContainer:
                 if AK4ForwardJet1_pT30 == 0 and AK4ForwardJet2_pT30 == 3:
                         jDeta_ak4_pT30 = getDeltaEta(self,0,3)
                         mjj_AK4_qq_pT30 = getMjj(self,0,3)
+                if AK4ForwardJet1_pT30 == 0 and AK4ForwardJet2_pT30 == 4:
+                        jDeta_ak4_pT30 = getDeltaEta(self,0,4)
+                        mjj_AK4_qq_pT30 = getMjj(self,0,4)
+                if AK4ForwardJet1_pT30 == 0 and AK4ForwardJet2_pT30 == 5:
+                        jDeta_ak4_pT30 = getDeltaEta(self,0,5)
+                        mjj_AK4_qq_pT30 = getMjj(self,0,5)
                 if AK4ForwardJet1_pT30 == 1 and AK4ForwardJet2_pT30 == 2:
                         jDeta_ak4_pT30 = getDeltaEta(self,1,2)
                         mjj_AK4_qq_pT30 = getMjj(self,1,2)
                 if AK4ForwardJet1_pT30 == 1 and AK4ForwardJet2_pT30 == 3:
                         jDeta_ak4_pT30 = getDeltaEta(self,1,3)
                         mjj_AK4_qq_pT30 = getMjj(self,1,3)
+                if AK4ForwardJet1_pT30 == 1 and AK4ForwardJet2_pT30 == 4:
+                        jDeta_ak4_pT30 = getDeltaEta(self,1,4)
+                        mjj_AK4_qq_pT30 = getMjj(self,1,4)
+                if AK4ForwardJet1_pT30 == 1 and AK4ForwardJet2_pT30 == 5:
+                        jDeta_ak4_pT30 = getDeltaEta(self,1,5)
+                        mjj_AK4_qq_pT30 = getMjj(self,1,5)
                 if AK4ForwardJet1_pT30 == 2 and AK4ForwardJet2_pT30 == 3:
                         jDeta_ak4_pT30 = getDeltaEta(self,2,3)
                         mjj_AK4_qq_pT30 = getMjj(self,2,3)
+                if AK4ForwardJet1_pT30 == 2 and AK4ForwardJet2_pT30 == 4:
+                        jDeta_ak4_pT30 = getDeltaEta(self,2,4)
+                        mjj_AK4_qq_pT30 = getMjj(self,2,4)
+                if AK4ForwardJet1_pT30 == 2 and AK4ForwardJet2_pT30 == 5:
+                        jDeta_ak4_pT30 = getDeltaEta(self,2,5)
+                        mjj_AK4_qq_pT30 = getMjj(self,2,5)
+                if AK4ForwardJet1_pT30 == 3 and AK4ForwardJet2_pT30 == 4:
+                        jDeta_ak4_pT30 = getDeltaEta(self,3,4)
+                        mjj_AK4_qq_pT30 = getMjj(self,3,4)
+                if AK4ForwardJet1_pT30 == 3 and AK4ForwardJet2_pT30 == 5:
+                        jDeta_ak4_pT30 = getDeltaEta(self,3,5)
+                        mjj_AK4_qq_pT30 = getMjj(self,3,5)
+                if AK4ForwardJet1_pT30 == 4 and AK4ForwardJet2_pT30 == 5:
+                        jDeta_ak4_pT30 = getDeltaEta(self,4,5)
+                        mjj_AK4_qq_pT30 = getMjj(self,4,5)
+
             if AK4jetMultiplicity_50 == 2:
                 if AK4ForwardJet1_pT50 == 0 and AK4ForwardJet2_pT50 == 1:
                         jDeta_ak4_pT50 = getDeltaEta(self,0,1)
@@ -1219,15 +1289,43 @@ class sampleContainer:
                 if AK4ForwardJet1_pT50 == 0 and AK4ForwardJet2_pT50 == 3:
                         jDeta_ak4_pT50 = getDeltaEta(self,0,3)
                         mjj_AK4_qq_pT50 = getMjj(self,0,3)
+                if AK4ForwardJet1_pT50 == 0 and AK4ForwardJet2_pT50 == 4:
+                        jDeta_ak4_pT50 = getDeltaEta(self,0,4)
+                        mjj_AK4_qq_pT50 = getMjj(self,0,4)
+                if AK4ForwardJet1_pT50 == 0 and AK4ForwardJet2_pT50 == 5:
+                        jDeta_ak4_pT50 = getDeltaEta(self,0,5)
+                        mjj_AK4_qq_pT50 = getMjj(self,0,5)
                 if AK4ForwardJet1_pT50 == 1 and AK4ForwardJet2_pT50 == 2:
                         jDeta_ak4_pT50 = getDeltaEta(self,1,2)
                         mjj_AK4_qq_pT50 = getMjj(self,1,2)
                 if AK4ForwardJet1_pT50 == 1 and AK4ForwardJet2_pT50 == 3:
                         jDeta_ak4_pT50 = getDeltaEta(self,1,3)
                         mjj_AK4_qq_pT50 = getMjj(self,1,3)
+                if AK4ForwardJet1_pT50 == 1 and AK4ForwardJet2_pT50 == 4:
+                        jDeta_ak4_pT50 = getDeltaEta(self,1,4)
+                        mjj_AK4_qq_pT50 = getMjj(self,1,4)
+                if AK4ForwardJet1_pT50 == 1 and AK4ForwardJet2_pT50 == 5:
+                        jDeta_ak4_pT50 = getDeltaEta(self,1,5)
+                        mjj_AK4_qq_pT50 = getMjj(self,1,5)
                 if AK4ForwardJet1_pT50 == 2 and AK4ForwardJet2_pT50 == 3:
                         jDeta_ak4_pT50 = getDeltaEta(self,2,3)
                         mjj_AK4_qq_pT50 = getMjj(self,2,3)
+                if AK4ForwardJet1_pT50 == 2 and AK4ForwardJet2_pT50 == 4:
+                        jDeta_ak4_pT50 = getDeltaEta(self,2,4)
+                        mjj_AK4_qq_pT50 = getMjj(self,2,4)
+                if AK4ForwardJet1_pT50 == 2 and AK4ForwardJet2_pT50 == 5:
+                        jDeta_ak4_pT50 = getDeltaEta(self,2,5)
+                        mjj_AK4_qq_pT50 = getMjj(self,2,5)
+                if AK4ForwardJet1_pT50 == 3 and AK4ForwardJet2_pT50 == 4:
+                        jDeta_ak4_pT50 = getDeltaEta(self,3,4)
+                        mjj_AK4_qq_pT50 = getMjj(self,3,4)
+                if AK4ForwardJet1_pT50 == 3 and AK4ForwardJet2_pT50 == 5:
+                        jDeta_ak4_pT50 = getDeltaEta(self,3,5)
+                        mjj_AK4_qq_pT50 = getMjj(self,3,5)
+                if AK4ForwardJet1_pT50 == 4 and AK4ForwardJet2_pT50 == 5:
+                        jDeta_ak4_pT50 = getDeltaEta(self,4,5)
+                        mjj_AK4_qq_pT50 = getMjj(self,4,5)
+
             if AK4jetMultiplicity_70 == 2:
                 if AK4ForwardJet1_pT70 == 0 and AK4ForwardJet2_pT70 == 1:
                         jDeta_ak4_pT70 = getDeltaEta(self,0,1)
@@ -1238,15 +1336,43 @@ class sampleContainer:
                 if AK4ForwardJet1_pT70 == 0 and AK4ForwardJet2_pT70 == 3:
                         jDeta_ak4_pT70 = getDeltaEta(self,0,3)
                         mjj_AK4_qq_pT70 = getMjj(self,0,3)
+                if AK4ForwardJet1_pT70 == 0 and AK4ForwardJet2_pT70 == 4:
+                        jDeta_ak4_pT70 = getDeltaEta(self,0,4)
+                        mjj_AK4_qq_pT70 = getMjj(self,0,4)
+                if AK4ForwardJet1_pT70 == 0 and AK4ForwardJet2_pT70 == 5:
+                        jDeta_ak4_pT70 = getDeltaEta(self,0,5)
+                        mjj_AK4_qq_pT70 = getMjj(self,0,5)
                 if AK4ForwardJet1_pT70 == 1 and AK4ForwardJet2_pT70 == 2:
                         jDeta_ak4_pT70 = getDeltaEta(self,1,2)
                         mjj_AK4_qq_pT70 = getMjj(self,1,2)
                 if AK4ForwardJet1_pT70 == 1 and AK4ForwardJet2_pT70 == 3:
                         jDeta_ak4_pT70 = getDeltaEta(self,1,3)
                         mjj_AK4_qq_pT70 = getMjj(self,1,3)
+                if AK4ForwardJet1_pT70 == 1 and AK4ForwardJet2_pT70 == 4:
+                        jDeta_ak4_pT70 = getDeltaEta(self,1,4)
+                        mjj_AK4_qq_pT70 = getMjj(self,1,4)
+                if AK4ForwardJet1_pT70 == 1 and AK4ForwardJet2_pT70 == 5:
+                        jDeta_ak4_pT70 = getDeltaEta(self,1,5)
+                        mjj_AK4_qq_pT70 = getMjj(self,1,5)
                 if AK4ForwardJet1_pT70 == 2 and AK4ForwardJet2_pT70 == 3:
                         jDeta_ak4_pT70 = getDeltaEta(self,2,3)
                         mjj_AK4_qq_pT70 = getMjj(self,2,3)
+                if AK4ForwardJet1_pT70 == 2 and AK4ForwardJet2_pT70 == 4:
+                        jDeta_ak4_pT70 = getDeltaEta(self,2,4)
+                        mjj_AK4_qq_pT70 = getMjj(self,2,4)
+                if AK4ForwardJet1_pT70 == 2 and AK4ForwardJet2_pT70 == 5:
+                        jDeta_ak4_pT70 = getDeltaEta(self,2,5)
+                        mjj_AK4_qq_pT70 = getMjj(self,2,5)
+                if AK4ForwardJet1_pT70 == 3 and AK4ForwardJet2_pT70 == 4:
+                        jDeta_ak4_pT70 = getDeltaEta(self,3,4)
+                        mjj_AK4_qq_pT70 = getMjj(self,3,4)
+                if AK4ForwardJet1_pT70 == 3 and AK4ForwardJet2_pT70 == 5:
+                        jDeta_ak4_pT70 = getDeltaEta(self,3,5)
+                        mjj_AK4_qq_pT70 = getMjj(self,3,5)
+                if AK4ForwardJet1_pT70 == 4 and AK4ForwardJet2_pT70 == 5:
+                        jDeta_ak4_pT70 = getDeltaEta(self,4,5)
+                        mjj_AK4_qq_pT70 = getMjj(self,4,5)
+
             if AK4jetMultiplicity_100 == 2:
                 if AK4ForwardJet1_pT100 == 0 and AK4ForwardJet2_pT100 == 1:
                         jDeta_ak4_pT100 = getDeltaEta(self,0,1)
@@ -1257,16 +1383,46 @@ class sampleContainer:
                 if AK4ForwardJet1_pT100 == 0 and AK4ForwardJet2_pT100 == 3:
                         jDeta_ak4_pT100 = getDeltaEta(self,0,3)
                         mjj_AK4_qq_pT100 = getMjj(self,0,3)
+                if AK4ForwardJet1_pT100 == 0 and AK4ForwardJet2_pT100 == 4:
+                        jDeta_ak4_pT100 = getDeltaEta(self,0,4)
+                        mjj_AK4_qq_pT100 = getMjj(self,0,4)
+                if AK4ForwardJet1_pT100 == 0 and AK4ForwardJet2_pT100 == 5:
+                        jDeta_ak4_pT100 = getDeltaEta(self,0,5)
+                        mjj_AK4_qq_pT100 = getMjj(self,0,5)
                 if AK4ForwardJet1_pT100 == 1 and AK4ForwardJet2_pT100 == 2:
                         jDeta_ak4_pT100 = getDeltaEta(self,1,2)
                         mjj_AK4_qq_pT100 = getMjj(self,1,2)
                 if AK4ForwardJet1_pT100 == 1 and AK4ForwardJet2_pT100 == 3:
                         jDeta_ak4_pT100 = getDeltaEta(self,1,3)
                         mjj_AK4_qq_pT100 = getMjj(self,1,3)
+                if AK4ForwardJet1_pT100 == 1 and AK4ForwardJet2_pT100 == 4:
+                        jDeta_ak4_pT100 = getDeltaEta(self,1,4)
+                        mjj_AK4_qq_pT100 = getMjj(self,1,4)
+                if AK4ForwardJet1_pT100 == 1 and AK4ForwardJet2_pT100 == 5:
+                        jDeta_ak4_pT100 = getDeltaEta(self,1,5)
+                        mjj_AK4_qq_pT100 = getMjj(self,1,5)
                 if AK4ForwardJet1_pT100 == 2 and AK4ForwardJet2_pT100 == 3:
                         jDeta_ak4_pT100 = getDeltaEta(self,2,3)
                         mjj_AK4_qq_pT100 = getMjj(self,2,3)
+                if AK4ForwardJet1_pT100 == 2 and AK4ForwardJet2_pT100 == 4:
+                        jDeta_ak4_pT100 = getDeltaEta(self,2,4)
+                        mjj_AK4_qq_pT100 = getMjj(self,2,4)
+                if AK4ForwardJet1_pT100 == 2 and AK4ForwardJet2_pT100 == 5:
+                        jDeta_ak4_pT100 = getDeltaEta(self,2,5)
+                        mjj_AK4_qq_pT100 = getMjj(self,2,5)
+                if AK4ForwardJet1_pT100 == 3 and AK4ForwardJet2_pT100 == 4:
+                        jDeta_ak4_pT100 = getDeltaEta(self,3,4)
+                        mjj_AK4_qq_pT100 = getMjj(self,3,4)
+                if AK4ForwardJet1_pT100 == 3 and AK4ForwardJet2_pT100 == 5:
+                        jDeta_ak4_pT100 = getDeltaEta(self,3,5)
+                        mjj_AK4_qq_pT100 = getMjj(self,3,5)
+                if AK4ForwardJet1_pT100 == 4 and AK4ForwardJet2_pT100 == 5:
+                        jDeta_ak4_pT100 = getDeltaEta(self,4,5)
+                        mjj_AK4_qq_pT100 = getMjj(self,4,5)
 
+#            if AK4jetMultiplicity_30 == 2:
+#		print jDeta_ak4_pT30
+#		print mjj_AK4_qq_pT30
 
 
 	    if DeltaR_0 < Lowest_DeltaR:
@@ -1304,71 +1460,71 @@ class sampleContainer:
 
 	    nAK4PuppijetsPt30 = self.nAK4PuppijetsPt30[0]
             mjj_AK4_qq = -99.
-	    if self.nAK4PuppijetsPt30[0] > 3:
-		if self.AK4Puppijet0_csv[0] > Highest_csv:
-			Highest_csv = self.AK4Puppijet0_csv[0]
-			Highest_csv_jet = 0.
-		if self.AK4Puppijet1_csv[0] > Highest_csv:
-                        Highest2nd_csv = Highest_csv
-			Highest_csv = self.AK4Puppijet1_csv[0]
-			Highest_csv_jet = 1.
-			Highest2nd_csv_jet = 0.
-		else:
-			Highest2nd_csv = self.AK4Puppijet1_csv[0]
-			Highest2nd_csv_jet = 1.
-		if self.AK4Puppijet2_csv[0] > Highest2nd_csv:
-			if self.AK4Puppijet2_csv[0] > Highest_csv:
-				Highest2nd_csv = Highest_csv
-				Highest_csv = self.AK4Puppijet2_csv[0]
-				Highest2nd_csv_jet = Highest_csv_jet
-				Highest_csv_jet = 2.
-			else:
-				Highest2nd_csv = self.AK4Puppijet2_csv[0]
-				Highest2nd_csv_jet = 2.
-		if self.AK4Puppijet3_csv[0] > Highest2nd_csv:
-                        if self.AK4Puppijet3_csv[0] > Highest_csv:
-                                Highest2nd_csv = Highest_csv
-                                Highest_csv = self.AK4Puppijet3_csv[0]
-				Highest2nd_csv_jet = Highest_csv_jet
-                                Highest_csv_jet = 3.
-                        else:
-                                Highest2nd_csv = self.AK4Puppijet3_csv[0]
-				Highest2nd_csv_jet = 3.
+#	    if self.nAK4PuppijetsPt30[0] > 3:
+#		if self.AK4Puppijet0_csv[0] > Highest_csv:
+#			Highest_csv = self.AK4Puppijet0_csv[0]
+#			Highest_csv_jet = 0.
+#		if self.AK4Puppijet1_csv[0] > Highest_csv:
+#                        Highest2nd_csv = Highest_csv
+#			Highest_csv = self.AK4Puppijet1_csv[0]
+#			Highest_csv_jet = 1.
+#			Highest2nd_csv_jet = 0.
+#		else:
+#			Highest2nd_csv = self.AK4Puppijet1_csv[0]
+#			Highest2nd_csv_jet = 1.
+#		if self.AK4Puppijet2_csv[0] > Highest2nd_csv:
+#			if self.AK4Puppijet2_csv[0] > Highest_csv:
+#				Highest2nd_csv = Highest_csv
+#				Highest_csv = self.AK4Puppijet2_csv[0]
+#				Highest2nd_csv_jet = Highest_csv_jet
+#				Highest_csv_jet = 2.
+#			else:
+#				Highest2nd_csv = self.AK4Puppijet2_csv[0]
+#				Highest2nd_csv_jet = 2.
+#		if self.AK4Puppijet3_csv[0] > Highest2nd_csv:
+#                        if self.AK4Puppijet3_csv[0] > Highest_csv:
+#                                Highest2nd_csv = Highest_csv
+#                                Highest_csv = self.AK4Puppijet3_csv[0]
+#				Highest2nd_csv_jet = Highest_csv_jet
+#                                Highest_csv_jet = 3.
+#                        else:
+#                                Highest2nd_csv = self.AK4Puppijet3_csv[0]
+#				Highest2nd_csv_jet = 3.
 
-                AK4_0 = ROOT.TLorentzVector()
-                AK4_1 = ROOT.TLorentzVector()
-                mjj_AK4_qq = -1.
+#                AK4_0 = ROOT.TLorentzVector()
+#                AK4_1 = ROOT.TLorentzVector()
+#                mjj_AK4_qq = -1.
 
-		if (Highest_csv_jet == 0 and Highest2nd_csv_jet == 1) or (Highest_csv_jet == 1 and Highest2nd_csv_jet == 0):
-			jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet1_eta[0])
-	                AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
-	                AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])			
-	                mjj_AK4_qq = (AK4_0 + AK4_1).M()
-                elif (Highest_csv_jet == 0 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 0):
-                        jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet2_eta[0])
-                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
-                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
-                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
-                elif (Highest_csv_jet == 0 and Highest2nd_csv_jet == 3) or (Highest_csv_jet == 3 and Highest2nd_csv_jet == 0):
-                        jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet3_eta[0])
-                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
-                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
-                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
-                elif (Highest_csv_jet == 1 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 1):
-                        jDeta_4_nonHiggs = abs(self.AK4Puppijet1_eta[0] - self.AK4Puppijet2_eta[0])
-                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
-                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
-                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
-                elif (Highest_csv_jet == 1 and Highest2nd_csv_jet == 3) or (Highest_csv_jet == 3 and Highest2nd_csv_jet == 1):
-                        jDeta_4_nonHiggs = abs(self.AK4Puppijet1_eta[0] - self.AK4Puppijet3_eta[0])
-                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
-                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
-                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
-                elif (Highest_csv_jet == 3 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 3):
-                        jDeta_4_nonHiggs = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet2_eta[0])
-                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
-                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
-                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#		if (Highest_csv_jet == 0 and Highest2nd_csv_jet == 1) or (Highest_csv_jet == 1 and Highest2nd_csv_jet == 0):
+#			jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet1_eta[0])
+#	                AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
+#	                AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])			
+#	                mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#                elif (Highest_csv_jet == 0 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 0):
+#                        jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet2_eta[0])
+#                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
+#                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
+#                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#                elif (Highest_csv_jet == 0 and Highest2nd_csv_jet == 3) or (Highest_csv_jet == 3 and Highest2nd_csv_jet == 0):
+#                        jDeta_4_nonHiggs = abs(self.AK4Puppijet0_eta[0] - self.AK4Puppijet3_eta[0])
+#                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
+#                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+#                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#                elif (Highest_csv_jet == 1 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 1):
+#                        jDeta_4_nonHiggs = abs(self.AK4Puppijet1_eta[0] - self.AK4Puppijet2_eta[0])
+#                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
+#                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
+#                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#                elif (Highest_csv_jet == 1 and Highest2nd_csv_jet == 3) or (Highest_csv_jet == 3 and Highest2nd_csv_jet == 1):
+#                        jDeta_4_nonHiggs = abs(self.AK4Puppijet1_eta[0] - self.AK4Puppijet3_eta[0])
+#                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+#                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
+#                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
+#                elif (Highest_csv_jet == 3 and Highest2nd_csv_jet == 2) or (Highest_csv_jet == 2 and Highest2nd_csv_jet == 3):
+#                        jDeta_4_nonHiggs = abs(self.AK4Puppijet3_eta[0] - self.AK4Puppijet2_eta[0])
+#                        AK4_0.SetPtEtaPhiM(self.AK4Puppijet3_pt[0],self.AK4Puppijet3_eta[0],self.AK4Puppijet3_phi[0],self.AK4Puppijet3_mass[0])
+#                        AK4_1.SetPtEtaPhiM(self.AK4Puppijet2_pt[0],self.AK4Puppijet2_eta[0],self.AK4Puppijet2_phi[0],self.AK4Puppijet2_mass[0])
+#                        mjj_AK4_qq = (AK4_0 + AK4_1).M()
 
 
 #            jDeta_4_nonHiggs = -1.
@@ -1447,18 +1603,16 @@ class sampleContainer:
 
 
 	    ###Higgs Matching
-	    DeltaR_H_AK8 = -999.
-	    if not self._isData:
-		    DPhi_H_AK8 = self.genVPhi[0] - self.AK8Puppijet0_phi[0]
-        	    if DPhi_H_AK8 >= math.pi:
-	                DPhi_H_AK8 -= 2.*math.pi
-	            elif DPhi_H_AK8 < -math.pi:
-        	        DPhi_H_AK8 += 2.*math.pi
+#	    DPhi_H_AK8 = self.genVPhi[0] - self.jet1_puppi_phi[0]
+#            if DPhi_H_AK8 >= math.pi:
+#                DPhi_H_AK8 -= 2.*math.pi
+#            elif DPhi_H_AK8 < -math.pi:
+#                DPhi_H_AK8 += 2.*math.pi
 
-	            DeltaR_H_AK8 = math.sqrt((self.genVEta[0] - self.AK8Puppijet0_eta[0])**2 + (DPhi_H_AK8)**2)
+#            DeltaR_H_AK8 = math.sqrt((self.genVEta[0] - self.jet1_puppi_eta[0])**2 + (DPhi_H_AK8)**2)
 
-		    if DeltaR_H_AK8 > math.pi:
-			DeltaR_H_AK8 = 2*math.pi - DeltaR_H_AK8
+#	    if DeltaR_H_AK8 > math.pi:
+#		DeltaR_H_AK8 = 2*math.pi - DeltaR_H_AK8
 
 
             # N2DDT transformation
@@ -1470,228 +1624,228 @@ class sampleContainer:
             if jpt_8 > self._trans_h2ddt.GetYaxis().GetBinUpEdge(
                 self._trans_h2ddt.GetYaxis().GetNbins()): cur_pt_index = self._trans_h2ddt.GetYaxis().GetNbins()
             if jpt_8 < self._trans_h2ddt.GetYaxis().GetBinLowEdge(1): cur_pt_index = 1
-            jtN2b1sdddt_8 = jtN2b1sd_8 - self._trans_h2ddt.GetBinContent(cur_rho_index, cur_pt_index)
+#            jtN2b1sdddt_8 = jtN2b1sd_8 - self._trans_h2ddt.GetBinContent(cur_rho_index, cur_pt_index)
 
-            jdb_8 = self.AK8Puppijet0_doublecsv[0]
+            jdb_8 = self.jet1bbtag[0]
             if not self._minBranches:
-                if self.AK8Puppijet1_doublecsv[0] > 1:
+                if self.jet1bbtag[0] > 1:
                     jdb_8_sub1 = -99
                 else:
-                    jdb_8_sub1 = self.AK8Puppijet1_doublecsv[0]
-                if self.AK8Puppijet2_doublecsv[0] > 1:
-                    jdb_8_sub2 = -99
-                else:
-                    jdb_8_sub2 = self.AK8Puppijet2_doublecsv[0]
+                    jdb_8_sub1 = self.jet1bbtag[0]
+#                if self.AK8Puppijet2_doublecsv[0] > 1:
+#                    jdb_8_sub2 = -99
+#                else:
+#                    jdb_8_sub2 = self.AK8Puppijet2_doublecsv[0]
 
             n_4 = self.nAK4PuppijetsPt30[0]
-            if not self._minBranches:
-                n_fwd_4 = self.nAK4PuppijetsfwdPt30[0]
-            n_dR0p8_4 = self.nAK4PuppijetsPt30dR08_0[0]
+#            if not self._minBranches:
+#                n_fwd_4 = self.nAK4PuppijetsfwdPt30[0]
+#            n_dR0p8_4 = self.nAK4PuppijetsPt30dR08_0[0]
             # due to bug, don't use jet counting JER/JES Up/Down for now
             # n_dR0p8_4_JERUp = self.nAK4PuppijetsPt30dR08jerUp_0[0]
             # n_dR0p8_4_JERDown = self.nAK4PuppijetsPt30dR08jerDown_0[0]
             # n_dR0p8_4_JESUp = self.nAK4PuppijetsPt30dR08jesUp_0[0]
             # n_dR0p8_4_JESDown = self.nAK4PuppijetsPt30dR08jesDown_0[0]
-            n_dR0p8_4_JERUp = n_dR0p8_4
-            n_dR0p8_4_JERDown = n_dR0p8_4
-            n_dR0p8_4_JESUp = n_dR0p8_4
-            n_dR0p8_4_JESDown = n_dR0p8_4
+#            n_dR0p8_4_JERUp = n_dR0p8_4
+#            n_dR0p8_4_JERDown = n_dR0p8_4
+#            n_dR0p8_4_JESUp = n_dR0p8_4
+#            n_dR0p8_4_JESDown = n_dR0p8_4
             
-            n_MdR0p8_4 = self.nAK4PuppijetsMPt50dR08_0[0]
-            if not self._minBranches:
-                n_LdR0p8_4 = self.nAK4PuppijetsLPt50dR08_0[0]
-                n_TdR0p8_4 = self.nAK4PuppijetsTPt50dR08_0[0]
-                n_LPt100dR0p8_4 = self.nAK4PuppijetsLPt100dR08_0[0]
-                n_MPt100dR0p8_4 = self.nAK4PuppijetsMPt100dR08_0[0]
-                n_TPt100dR0p8_4 = self.nAK4PuppijetsTPt100dR08_0[0]
-                n_LPt150dR0p8_4 = self.nAK4PuppijetsLPt150dR08_0[0]
-                n_MPt150dR0p8_4 = self.nAK4PuppijetsMPt150dR08_0[0]
-                n_TPt150dR0p8_4 = self.nAK4PuppijetsTPt150dR08_0[0]
+#            n_MdR0p8_4 = self.nAK4PuppijetsMPt50dR08_0[0]
+#            if not self._minBranches:
+#                n_LdR0p8_4 = self.nAK4PuppijetsLPt50dR08_0[0]
+#                n_TdR0p8_4 = self.nAK4PuppijetsTPt50dR08_0[0]
+#                n_LPt100dR0p8_4 = self.nAK4PuppijetsLPt100dR08_0[0]
+#                n_MPt100dR0p8_4 = self.nAK4PuppijetsMPt100dR08_0[0]
+#                n_TPt100dR0p8_4 = self.nAK4PuppijetsTPt100dR08_0[0]
+#                n_LPt150dR0p8_4 = self.nAK4PuppijetsLPt150dR08_0[0]
+#                n_MPt150dR0p8_4 = self.nAK4PuppijetsMPt150dR08_0[0]
+#                n_TPt150dR0p8_4 = self.nAK4PuppijetsTPt150dR08_0[0]
 
-            met = self.pfmet[0]#puppet[0]
-            metphi = self.pfmetphi[0]#puppetphi[0]
-            met_x = met * ROOT.TMath.Cos(metphi)
-            met_y = met * ROOT.TMath.Sin(metphi)
-            met_JESUp = ROOT.TMath.Sqrt(
-                (met_x + self.MetXCorrjesUp[0]) * (met_x + self.MetXCorrjesUp[0]) + (met_y + self.MetYCorrjesUp[0]) * (
-                met_y + self.MetYCorrjesUp[0]))
-            met_JESDown = ROOT.TMath.Sqrt((met_x + self.MetXCorrjesDown[0]) * (met_x + self.MetXCorrjesDown[0]) + (
-            met_y + self.MetYCorrjesDown[0]) * (met_y + self.MetYCorrjesDown[0]))
-            met_JERUp = ROOT.TMath.Sqrt(
-                (met_x + self.MetXCorrjerUp[0]) * (met_x + self.MetXCorrjerUp[0]) + (met_y + self.MetYCorrjerUp[0]) * (
-                met_y + self.MetYCorrjerUp[0]))
-            met_JERDown = ROOT.TMath.Sqrt((met_x + self.MetXCorrjerDown[0]) * (met_x + self.MetXCorrjerDown[0]) + (
-            met_y + self.MetYCorrjerDown[0]) * (met_y + self.MetYCorrjerDown[0]))
+            met = self.MET[0]#puppet[0]
+#            metphi = self.pfmetphi[0]#puppetphi[0]
+#            met_x = met * ROOT.TMath.Cos(metphi)
+#            met_y = met * ROOT.TMath.Sin(metphi)
+#            met_JESUp = ROOT.TMath.Sqrt(
+#                (met_x + self.MetXCorrjesUp[0]) * (met_x + self.MetXCorrjesUp[0]) + (met_y + self.MetYCorrjesUp[0]) * (
+#                met_y + self.MetYCorrjesUp[0]))
+#            met_JESDown = ROOT.TMath.Sqrt((met_x + self.MetXCorrjesDown[0]) * (met_x + self.MetXCorrjesDown[0]) + (
+#            met_y + self.MetYCorrjesDown[0]) * (met_y + self.MetYCorrjesDown[0]))
+#            met_JERUp = ROOT.TMath.Sqrt(
+#                (met_x + self.MetXCorrjerUp[0]) * (met_x + self.MetXCorrjerUp[0]) + (met_y + self.MetYCorrjerUp[0]) * (
+#                met_y + self.MetYCorrjerUp[0]))
+#            met_JERDown = ROOT.TMath.Sqrt((met_x + self.MetXCorrjerDown[0]) * (met_x + self.MetXCorrjerDown[0]) + (
+#            met_y + self.MetYCorrjerDown[0]) * (met_y + self.MetYCorrjerDown[0]))
 
-            ratioCA15_04 = self.AK8Puppijet0_ratioCA15_04[0]
+#            ratioCA15_04 = self.AK8Puppijet0_ratioCA15_04[0]
 
-            ntau = self.ntau[0]
-            nmuLoose = self.nmuLoose[0]
-            neleLoose = self.neleLoose[0]
-            nphoLoose = self.nphoLoose[0]
-            isTightVJet = self.AK8Puppijet0_isTightVJet[0]
+            ntau = 0
+            nmuLoose = 0
+            neleLoose = 0
+            nphoLoose = 0
+#            isTightVJet = self.AK8Puppijet0_isTightVJet[0]
 
             # muon info
-            vmuoLoose0_pt = self.vmuoLoose0_pt[0]
-            vmuoLoose0_eta = self.vmuoLoose0_eta[0]
-            vmuoLoose0_phi = self.vmuoLoose0_phi[0]
+#            vmuoLoose0_pt = self.vmuoLoose0_pt[0]
+#            vmuoLoose0_eta = self.vmuoLoose0_eta[0]
+#            vmuoLoose0_phi = self.vmuoLoose0_phi[0]
 
-            self.h_npv.Fill(self.npv[0], weight)
+#            self.h_npv.Fill(self.npv[0], weight)
 
             # gen-matching for scale/smear systematic
             dphi = 9999
             dpt = 9999
             dmass = 9999
-            if (not self._isData):
-                genVPt = self.genVPt[0]
-                genVEta = self.genVEta[0]
-                genVPhi = self.genVPhi[0]
-                genVMass = self.genVMass[0]
-                if genVPt > 0 and genVMass > 0:
-                    dphi = math.fabs(genVPhi - jphi_8)
-                    dpt = math.fabs(genVPt - jpt_8) / genVPt
-                    dmass = math.fabs(genVMass - jmsd_8) / genVMass
+#            if (not self._isData):
+#                genVPt = self.genVPt[0]
+#                genVEta = self.genVEta[0]
+#                genVPhi = self.genVPhi[0]
+#                genVMass = self.genVMass[0]
+#                if genVPt > 0 and genVMass > 0:
+#                    dphi = math.fabs(genVPhi - jphi_8)
+#                    dpt = math.fabs(genVPt - jpt_8) / genVPt
+#                    dmass = math.fabs(genVMass - jmsd_8) / genVMass
 
             # Single Muon Control Regions
-            if jpt_8 > PTCUTMUCR and jmsd_8 > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
-                    vmuoLoose0_eta) < 2.1 and isTightVJet and abs(
-                            vmuoLoose0_phi - jphi_8) > 2. * ROOT.TMath.Pi() / 3. and n_MdR0p8_4 >= 1:
-                if not self._minBranches:
-                    ht_ = 0.
-                    if (abs(self.AK4Puppijet0_eta[0]) < 2.4 and self.AK4Puppijet0_pt[0] > 30): ht_ = ht_ + \
-                                                                                                     self.AK4Puppijet0_pt[
-                                                                                                         0]
-                    if (abs(self.AK4Puppijet1_eta[0]) < 2.4 and self.AK4Puppijet1_pt[0] > 30): ht_ = ht_ + \
-                                                                                                     self.AK4Puppijet1_pt[
-                                                                                                         0]
-                    if (abs(self.AK4Puppijet2_eta[0]) < 2.4 and self.AK4Puppijet2_pt[0] > 30): ht_ = ht_ + \
-                                                                                                     self.AK4Puppijet2_pt[
-                                                                                                         0]
-                    if (abs(self.AK4Puppijet3_eta[0]) < 2.4 and self.AK4Puppijet3_pt[0] > 30): ht_ = ht_ + \
-                                                                                                     self.AK4Puppijet3_pt[
-                                                                                                         0]
-                    self.h_ht.Fill(ht_, weight)
+#            if jpt_8 > PTCUTMUCR and jmsd_8 > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
+#                    vmuoLoose0_eta) < 2.1 and isTightVJet and abs(
+#                            vmuoLoose0_phi - jphi_8) > 2. * ROOT.TMath.Pi() / 3. and n_MdR0p8_4 >= 1:
+#                if not self._minBranches:
+#                    ht_ = 0.
+#                    if (abs(self.AK4Puppijet0_eta[0]) < 2.4 and self.AK4Puppijet0_pt[0] > 30): ht_ = ht_ + \
+#                                                                                                     self.AK4Puppijet0_pt[
+#                                                                                                         0]
+#                    if (abs(self.AK4Puppijet1_eta[0]) < 2.4 and self.AK4Puppijet1_pt[0] > 30): ht_ = ht_ + \
+#                                                                                                     self.AK4Puppijet1_pt[
+#                                                                                                         0]
+#                    if (abs(self.AK4Puppijet2_eta[0]) < 2.4 and self.AK4Puppijet2_pt[0] > 30): ht_ = ht_ + \
+#                                                                                                     self.AK4Puppijet2_pt[
+#                                                                                                         0]
+#                    if (abs(self.AK4Puppijet3_eta[0]) < 2.4 and self.AK4Puppijet3_pt[0] > 30): ht_ = ht_ + \
+#                                                                                                     self.AK4Puppijet3_pt[
+#                                                                                                         0]
+#                    self.h_ht.Fill(ht_, weight)
 
-                    self.h_msd_ak8_muCR1.Fill(jmsd_8, weight_mu)
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_muCR2.Fill(jmsd_8, weight_mu)
-                    if jt21P_8 < 0.4:
-                        self.h_msd_ak8_muCR3.Fill(jmsd_8, weight_mu)
+#                    self.h_msd_ak8_muCR1.Fill(jmsd_8, weight_mu)
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_muCR2.Fill(jmsd_8, weight_mu)
+#                    if jt21P_8 < 0.4:
+#                        self.h_msd_ak8_muCR3.Fill(jmsd_8, weight_mu)
 
-                    self.h_t21ddt_ak8_muCR4.Fill(jt21P_8, weight_mu)
-                    if jt21P_8 < T21DDTCUT:
-                        self.h_dbtag_ak8_muCR4.Fill(jdb_8, weight_mu)
-                        self.h_msd_ak8_muCR4.Fill(jmsd_8, weight_mu)
-                        self.h_pt_ak8_muCR4.Fill(jpt_8, weight_mu)
-                        self.h_eta_ak8_muCR4.Fill(jeta_8, weight_mu)
-                        self.h_pt_mu_muCR4.Fill(vmuoLoose0_pt, weight_mu)
-                        self.h_eta_mu_muCR4.Fill(vmuoLoose0_eta, weight_mu)
-                        if jdb_8 > DBTAGCUT:
-                            self.h_msd_ak8_muCR4_pass.Fill(jmsd_8, weight_mu)
-                            self.h_msd_v_pt_ak8_muCR4_pass.Fill(jmsd_8, jpt_8, weight_mu)
-                        elif jdb_8 > self.DBTAGCUTMIN:
-                            self.h_msd_ak8_muCR4_fail.Fill(jmsd_8, weight_mu)
-                            self.h_msd_v_pt_ak8_muCR4_fail.Fill(jmsd_8, jpt_8, weight_mu)
+#                    self.h_t21ddt_ak8_muCR4.Fill(jt21P_8, weight_mu)
+#                    if jt21P_8 < T21DDTCUT:
+#                        self.h_dbtag_ak8_muCR4.Fill(jdb_8, weight_mu)
+#                        self.h_msd_ak8_muCR4.Fill(jmsd_8, weight_mu)
+#                        self.h_pt_ak8_muCR4.Fill(jpt_8, weight_mu)
+#                        self.h_eta_ak8_muCR4.Fill(jeta_8, weight_mu)
+#                        self.h_pt_mu_muCR4.Fill(vmuoLoose0_pt, weight_mu)
+#                        self.h_eta_mu_muCR4.Fill(vmuoLoose0_eta, weight_mu)
+#                        if jdb_8 > DBTAGCUT:
+#                            self.h_msd_ak8_muCR4_pass.Fill(jmsd_8, weight_mu)
+#                            self.h_msd_v_pt_ak8_muCR4_pass.Fill(jmsd_8, jpt_8, weight_mu)
+#                        elif jdb_8 > self.DBTAGCUTMIN:
+#                            self.h_msd_ak8_muCR4_fail.Fill(jmsd_8, weight_mu)
+#                            self.h_msd_v_pt_ak8_muCR4_fail.Fill(jmsd_8, jpt_8, weight_mu)
 
-                    if jdb_8 > 0.7 and jt21P_8 < 0.4:
-                        self.h_msd_ak8_muCR5.Fill(jmsd_8, weight_mu)
-                    if jdb_8 > 0.7 and jt21P_8 < T21DDTCUT:
-                        self.h_msd_ak8_muCR6.Fill(jmsd_8, weight_mu)
+#                    if jdb_8 > 0.7 and jt21P_8 < 0.4:
+#                        self.h_msd_ak8_muCR5.Fill(jmsd_8, weight_mu)
+#                    if jdb_8 > 0.7 and jt21P_8 < T21DDTCUT:
+#                        self.h_msd_ak8_muCR6.Fill(jmsd_8, weight_mu)
 
-                if jtN2b1sdddt_8 < 0:
-                    self.h_dbtag_ak8_muCR4_N2.Fill(jdb_8, weight_mu)
-                    self.h_msd_ak8_muCR4_N2.Fill(jmsd_8, weight_mu)
-                    self.h_pt_ak8_muCR4_N2.Fill(jpt_8, weight_mu)
-                    self.h_eta_ak8_muCR4_N2.Fill(jeta_8, weight_mu)
-                    self.h_pt_mu_muCR4_N2.Fill(vmuoLoose0_pt, weight_mu)
-                    self.h_eta_mu_muCR4_N2.Fill(vmuoLoose0_eta, weight_mu)
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_muCR4_N2_pass.Fill(jmsd_8, weight_mu)
-                        self.h_msd_v_pt_ak8_muCR4_N2_pass.Fill(jmsd_8, jpt_8, weight_mu)
-                        self.h_msd_ak8_muCR4_N2_pass_mutriggerUp.Fill(jmsd_8, weight_mutriggerUp)
-                        self.h_msd_ak8_muCR4_N2_pass_mutriggerDown.Fill(jmsd_8, weight_mutriggerDown)
-                        self.h_msd_ak8_muCR4_N2_pass_muidUp.Fill(jmsd_8, weight_muidUp)
-                        self.h_msd_ak8_muCR4_N2_pass_muidDown.Fill(jmsd_8, weight_muidDown)
-                        self.h_msd_ak8_muCR4_N2_pass_muisoUp.Fill(jmsd_8, weight_muisoUp)
-                        self.h_msd_ak8_muCR4_N2_pass_muisoDown.Fill(jmsd_8, weight_muisoDown)
-                        self.h_msd_ak8_muCR4_N2_pass_PuUp.Fill(jmsd_8, weight_mu_pu_up)
-                        self.h_msd_ak8_muCR4_N2_pass_PuDown.Fill(jmsd_8, weight_mu_pu_down)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_muCR4_N2_fail.Fill(jmsd_8, weight_mu)
-                        self.h_msd_v_pt_ak8_muCR4_N2_fail.Fill(jmsd_8, jpt_8, weight_mu)
-                        self.h_msd_ak8_muCR4_N2_fail_mutriggerUp.Fill(jmsd_8, weight_mutriggerUp)
-                        self.h_msd_ak8_muCR4_N2_fail_mutriggerDown.Fill(jmsd_8, weight_mutriggerDown)
-                        self.h_msd_ak8_muCR4_N2_fail_muidUp.Fill(jmsd_8, weight_muidUp)
-                        self.h_msd_ak8_muCR4_N2_fail_muidDown.Fill(jmsd_8, weight_muidDown)
-                        self.h_msd_ak8_muCR4_N2_fail_muisoUp.Fill(jmsd_8, weight_muisoUp)
-                        self.h_msd_ak8_muCR4_N2_fail_muisoDown.Fill(jmsd_8, weight_muisoDown)
-                        self.h_msd_ak8_muCR4_N2_fail_PuUp.Fill(jmsd_8, weight_mu_pu_up)
-                        self.h_msd_ak8_muCR4_N2_fail_PuDown.Fill(jmsd_8, weight_mu_pu_down)
+#                if jtN2b1sdddt_8 < 0:
+#                    self.h_dbtag_ak8_muCR4_N2.Fill(jdb_8, weight_mu)
+#                    self.h_msd_ak8_muCR4_N2.Fill(jmsd_8, weight_mu)
+#                    self.h_pt_ak8_muCR4_N2.Fill(jpt_8, weight_mu)
+#                    self.h_eta_ak8_muCR4_N2.Fill(jeta_8, weight_mu)
+#                    self.h_pt_mu_muCR4_N2.Fill(vmuoLoose0_pt, weight_mu)
+#                    self.h_eta_mu_muCR4_N2.Fill(vmuoLoose0_eta, weight_mu)
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_muCR4_N2_pass.Fill(jmsd_8, weight_mu)
+#                        self.h_msd_v_pt_ak8_muCR4_N2_pass.Fill(jmsd_8, jpt_8, weight_mu)
+#                        self.h_msd_ak8_muCR4_N2_pass_mutriggerUp.Fill(jmsd_8, weight_mutriggerUp)
+#                        self.h_msd_ak8_muCR4_N2_pass_mutriggerDown.Fill(jmsd_8, weight_mutriggerDown)
+#                        self.h_msd_ak8_muCR4_N2_pass_muidUp.Fill(jmsd_8, weight_muidUp)
+#                        self.h_msd_ak8_muCR4_N2_pass_muidDown.Fill(jmsd_8, weight_muidDown)
+#                        self.h_msd_ak8_muCR4_N2_pass_muisoUp.Fill(jmsd_8, weight_muisoUp)
+#                        self.h_msd_ak8_muCR4_N2_pass_muisoDown.Fill(jmsd_8, weight_muisoDown)
+#                        self.h_msd_ak8_muCR4_N2_pass_PuUp.Fill(jmsd_8, weight_mu_pu_up)
+#                        self.h_msd_ak8_muCR4_N2_pass_PuDown.Fill(jmsd_8, weight_mu_pu_down)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_muCR4_N2_fail.Fill(jmsd_8, weight_mu)
+#                        self.h_msd_v_pt_ak8_muCR4_N2_fail.Fill(jmsd_8, jpt_8, weight_mu)
+#                        self.h_msd_ak8_muCR4_N2_fail_mutriggerUp.Fill(jmsd_8, weight_mutriggerUp)
+#                        self.h_msd_ak8_muCR4_N2_fail_mutriggerDown.Fill(jmsd_8, weight_mutriggerDown)
+#                        self.h_msd_ak8_muCR4_N2_fail_muidUp.Fill(jmsd_8, weight_muidUp)
+#                        self.h_msd_ak8_muCR4_N2_fail_muidDown.Fill(jmsd_8, weight_muidDown)
+#                        self.h_msd_ak8_muCR4_N2_fail_muisoUp.Fill(jmsd_8, weight_muisoUp)
+#                        self.h_msd_ak8_muCR4_N2_fail_muisoDown.Fill(jmsd_8, weight_muisoDown)
+#                        self.h_msd_ak8_muCR4_N2_fail_PuUp.Fill(jmsd_8, weight_mu_pu_up)
+#                        self.h_msd_ak8_muCR4_N2_fail_PuDown.Fill(jmsd_8, weight_mu_pu_down)
 
-            for syst in ['JESUp', 'JESDown', 'JERUp', 'JERDown']:
-                if eval(
-                                'jpt_8_%s' % syst) > PTCUTMUCR and jmsd_8 > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
-                        vmuoLoose0_eta) < 2.1 and isTightVJet and jtN2b1sdddt_8 < 0 and abs(
-                                vmuoLoose0_phi - jphi_8) > 2. * ROOT.TMath.Pi() / 3. and n_MdR0p8_4 >= 1:
-                    if jdb_8 > DBTAGCUT:
-                        (getattr(self, 'h_msd_ak8_muCR4_N2_pass_%s' % syst)).Fill(jmsd_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        (getattr(self, 'h_msd_ak8_muCR4_N2_fail_%s' % syst)).Fill(jmsd_8, weight)
+#            for syst in ['JESUp', 'JESDown', 'JERUp', 'JERDown']:
+#                if eval(
+#                                'jpt_8_%s' % syst) > PTCUTMUCR and jmsd_8 > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
+#                        vmuoLoose0_eta) < 2.1 and isTightVJet and jtN2b1sdddt_8 < 0 and abs(
+#                                vmuoLoose0_phi - jphi_8) > 2. * ROOT.TMath.Pi() / 3. and n_MdR0p8_4 >= 1:
+#                    if jdb_8 > DBTAGCUT:
+#                        (getattr(self, 'h_msd_ak8_muCR4_N2_pass_%s' % syst)).Fill(jmsd_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        (getattr(self, 'h_msd_ak8_muCR4_N2_fail_%s' % syst)).Fill(jmsd_8, weight)
 
             if not self._minBranches:
-                jmsd_8_sub1 = self.AK8Puppijet1_msd[0]
-                jmsd_8_sub2 = self.AK8Puppijet2_msd[0]
-                n_MPt100dR0p8_4_sub1 = self.nAK4PuppijetsMPt100dR08_1[0]
-                n_MPt100dR0p8_4_sub2 = self.nAK4PuppijetsMPt100dR08_2[0]
+                jmsd_8_sub1 = self.jet1_puppi_msoftdrop_raw[0]
+#                jmsd_8_sub2 = self.AK8Puppijet2_msd[0]
+#                n_MPt100dR0p8_4_sub1 = self.nAK4PuppijetsMPt100dR08_1[0]
+#                n_MPt100dR0p8_4_sub2 = self.nAK4PuppijetsMPt100dR08_2[0]
 
-                jt21_8_sub1 = self.AK8Puppijet1_tau21[0]
+                jt21_8_sub1 = self.jet1tau21[0]
                 rhP_8_sub1 = -999
                 jt21P_8_sub1 = -999
                 if jpt_8_sub1 > 0 and jmsd_8_sub1 > 0:
                     rhP_8_sub1 = math.log(jmsd_8_sub1 * jmsd_8_sub1 / jpt_8_sub1)
                     jt21P_8_sub1 = jt21_8_sub1 + 0.063 * rhP_8_sub1
 
-                jt21_8_sub2 = self.AK8Puppijet2_tau21[0]
+#                jt21_8_sub2 = self.AK8Puppijet2_tau21[0]
                 rhP_8_sub2 = -999
                 jt21P_8_sub2 = -999
-                if jpt_8_sub2 > 0 and jmsd_8_sub2 > 0:
-                    rhP_8_sub2 = math.log(jmsd_8_sub2 * jmsd_8_sub2 / jpt_8_sub2)
-                    jt21P_8_sub2 = jt21_8_sub2 + 0.063 * rhP_8_sub2
+#                if jpt_8_sub2 > 0 and jmsd_8_sub2 > 0:
+#                    rhP_8_sub2 = math.log(jmsd_8_sub2 * jmsd_8_sub2 / jpt_8_sub2)
+#                    jt21P_8_sub2 = jt21_8_sub2 + 0.063 * rhP_8_sub2
 
-                isTightVJet_sub1 = self.AK8Puppijet1_isTightVJet
-                isTightVJet_sub2 = self.AK8Puppijet2_isTightVJet
+#                isTightVJet_sub1 = self.AK8Puppijet1_isTightVJet
+#                isTightVJet_sub2 = self.AK8Puppijet2_isTightVJet
 
-                bb_idx = [[jmsd_8, jpt_8, jdb_8, n_MPt100dR0p8_4, jt21P_8, isTightVJet],
-                          [jmsd_8_sub1, jpt_8_sub1, jdb_8_sub1, n_MPt100dR0p8_4_sub1, jt21P_8_sub1, isTightVJet_sub1],
-                          [jmsd_8_sub2, jpt_8_sub2, jdb_8_sub2, n_MPt100dR0p8_4_sub2, jt21P_8_sub2, isTightVJet_sub2]
-                          ]
+#                bb_idx = [[jmsd_8, jpt_8, jdb_8, n_MPt100dR0p8_4, jt21P_8, isTightVJet],
+#                          [jmsd_8_sub1, jpt_8_sub1, jdb_8_sub1, n_MPt100dR0p8_4_sub1, jt21P_8_sub1, isTightVJet_sub1],
+#                          [jmsd_8_sub2, jpt_8_sub2, jdb_8_sub2, n_MPt100dR0p8_4_sub2, jt21P_8_sub2, isTightVJet_sub2]
+#                          ]
 
-                a = 0
-                for i in sorted(bb_idx, key=lambda bbtag: bbtag[2], reverse=True):
-                    if a > 0: continue
-                    a = a + 1
-                    if i[1] > PTCUTMUCR and i[
-                        0] > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
-                            vmuoLoose0_eta) < 2.1 and i[4] < T21DDTCUT and i[5]:
-                        if i[2] > DBTAGCUT:
-                            self.h_msd_ak8_bbleading_muCR4_pass.Fill(i[0], weight_mu)
-                            self.h_msd_v_pt_ak8_bbleading_muCR4_pass.Fill(i[0], i[1], weight_mu)
-                        else:
-                            self.h_msd_ak8_bbleading_muCR4_fail.Fill(i[0], weight_mu)
-                            self.h_msd_v_pt_ak8_bbleading_muCR4_fail.Fill(i[0], i[1], weight_mu)
+#                a = 0
+#                for i in sorted(bb_idx, key=lambda bbtag: bbtag[2], reverse=True):
+#                    if a > 0: continue
+#                    a = a + 1
+#                    if i[1] > PTCUTMUCR and i[
+#                        0] > MASSCUT and nmuLoose == 1 and neleLoose == 0 and ntau == 0 and vmuoLoose0_pt > MUONPTCUT and abs(
+#                            vmuoLoose0_eta) < 2.1 and i[4] < T21DDTCUT and i[5]:
+#                        if i[2] > DBTAGCUT:
+#                            self.h_msd_ak8_bbleading_muCR4_pass.Fill(i[0], weight_mu)
+#                            self.h_msd_v_pt_ak8_bbleading_muCR4_pass.Fill(i[0], i[1], weight_mu)
+#                        else:
+#                            self.h_msd_ak8_bbleading_muCR4_fail.Fill(i[0], weight_mu)
+#                            self.h_msd_v_pt_ak8_bbleading_muCR4_fail.Fill(i[0], i[1], weight_mu)
 
-                if jpt_8 > PTCUT:
-                    cut[3] = cut[3] + 1
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT:
-                    cut[4] = cut[4] + 1
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet:
-                    cut[5] = cut[5] + 1
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0:
-                    cut[0] = cut[0] + 1
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0 and ntau == 0:
-                    cut[1] = cut[1] + 1
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0 and ntau == 0 and nphoLoose == 0:
-                    cut[2] = cut[2] + 1
+#                if jpt_8 > PTCUT:
+#                    cut[3] = cut[3] + 1
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT:
+#                    cut[4] = cut[4] + 1
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet:
+#                    cut[5] = cut[5] + 1
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0:
+#                    cut[0] = cut[0] + 1
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0 and ntau == 0:
+#                    cut[1] = cut[1] + 1
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and isTightVJet and neleLoose == 0 and nmuLoose == 0 and ntau == 0 and nphoLoose == 0:
+#                    cut[2] = cut[2] + 1
 
                 if jpt_8 > PTCUT:
                     self.h_msd_ak8_inc.Fill(jmsd_8, weight)
@@ -1703,23 +1857,23 @@ class sampleContainer:
 
             if not self._minBranches:
                 a = 0
-                for i in sorted(bb_idx, key=lambda bbtag: bbtag[2], reverse=True):
-                    if a > 0: continue
-                    a = a + 1
-                    if i[2] > DBTAGCUT and i[0] > MASSCUT and i[1] > PTCUT:
-                        self.h_msd_bbleading.Fill(i[0], weight)
+#                for i in sorted(bb_idx, key=lambda bbtag: bbtag[2], reverse=True):
+#                    if a > 0: continue
+#                    a = a + 1
+#                    if i[2] > DBTAGCUT and i[0] > MASSCUT and i[1] > PTCUT:
+#                        self.h_msd_bbleading.Fill(i[0], weight)
                         # print sorted(bb_idx, key=lambda bbtag: bbtag[2],reverse=True)
-                        self.h_pt_bbleading.Fill(i[1], weight)
+#                        self.h_pt_bbleading.Fill(i[1], weight)
                         # print(i[0],i[1],i[2])
-                        self.h_bb_bbleading.Fill(i[2], weight)
-                    if i[1] > PTCUT and i[0] > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and i[3] < 2 and i[
-                        4] < T21DDTCUT and n_fwd_4 < 3 and i[5]:
-                        if i[2] > DBTAGCUT:
-                            self.h_msd_ak8_bbleading_topR6_pass.Fill(i[0], weight)
-                            self.h_msd_v_pt_ak8_bbleading_topR6_pass.Fill(i[0], i[1], weight)
-                        else:
-                            self.h_msd_ak8_bbleading_topR6_fail.Fill(i[0], weight)
-                            self.h_msd_v_pt_ak8_bbleading_topR6_fail.Fill(i[0], i[1], weight)
+#                        self.h_bb_bbleading.Fill(i[2], weight)
+#                    if i[1] > PTCUT and i[0] > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and i[3] < 2 and i[
+#                        4] < T21DDTCUT and n_fwd_4 < 3 and i[5]:
+#                        if i[2] > DBTAGCUT:
+#                            self.h_msd_ak8_bbleading_topR6_pass.Fill(i[0], weight)
+#                            self.h_msd_v_pt_ak8_bbleading_topR6_pass.Fill(i[0], i[1], weight)
+#                        else:
+#                            self.h_msd_ak8_bbleading_topR6_fail.Fill(i[0], weight)
+#                            self.h_msd_v_pt_ak8_bbleading_topR6_fail.Fill(i[0], i[1], weight)
 
 		if jpt_8 > PTCUT and jmsd_8 > MASSCUT:
 			self.h_rho_ak8.Fill(rh_8, weight)
@@ -1728,240 +1882,240 @@ class sampleContainer:
                     self.h_pt_ak8.Fill(jpt_8, weight)
                     self.h_eta_ak8.Fill(jeta_8, weight)
                     self.h_pt_ak8_sub1.Fill(jpt_8_sub1, weight)
-                    self.h_pt_ak8_sub2.Fill(jpt_8_sub2, weight)
+#                    self.h_pt_ak8_sub2.Fill(jpt_8_sub2, weight)
                     self.h_msd_ak8.Fill(jmsd_8, weight)
 		    self.h_rho_ak8.Fill(rh_8, weight)
                     self.h_msd_ak8_raw.Fill(jmsd_8_raw, weight)
                     self.h_dbtag_ak8.Fill(jdb_8, weight)
                     self.h_dbtag_ak8_sub1.Fill(jdb_8_sub1, weight)
-                    self.h_dbtag_ak8_sub2.Fill(jdb_8_sub2, weight)
+#                    self.h_dbtag_ak8_sub2.Fill(jdb_8_sub2, weight)
                     self.h_t21_ak8.Fill(jt21_8, weight)
-                    self.h_t32_ak8.Fill(jt32_8, weight)
+#                    self.h_t32_ak8.Fill(jt32_8, weight)
                     self.h_t21ddt_ak8.Fill(jt21P_8, weight)
                     self.h_rhop_v_t21_ak8.Fill(rhP_8, jt21_8, weight)
-                    self.h_n2b1sd_ak8.Fill(jtN2b1sd_8, weight)
-                    self.h_n2b1sdddt_ak8.Fill(jtN2b1sdddt_8, weight)
+#                    self.h_n2b1sd_ak8.Fill(jtN2b1sd_8, weight)
+#                    self.h_n2b1sdddt_ak8.Fill(jtN2b1sdddt_8, weight)
 		
                     self.h_n_ak4.Fill(n_4, weight)
-                    self.h_n_ak4_dR0p8.Fill(n_dR0p8_4, weight)
-                    self.h_n_ak4fwd.Fill(n_fwd_4, weight)
-                    self.h_n_ak4L.Fill(n_LdR0p8_4, weight)
-                    self.h_n_ak4L100.Fill(n_LPt100dR0p8_4, weight)
-                    self.h_n_ak4M.Fill(n_MdR0p8_4, weight)
-                    self.h_n_ak4M100.Fill(n_MPt100dR0p8_4, weight)
-                    self.h_n_ak4T.Fill(n_TdR0p8_4, weight)
-                    self.h_n_ak4T100.Fill(n_TPt100dR0p8_4, weight)
-                    self.h_n_ak4L150.Fill(n_LPt150dR0p8_4, weight)
-                    self.h_n_ak4M150.Fill(n_MPt150dR0p8_4, weight)
-                    self.h_n_ak4T150.Fill(n_TPt150dR0p8_4, weight)
-                    self.h_isolationCA15.Fill(ratioCA15_04, weight)
+#                    self.h_n_ak4_dR0p8.Fill(n_dR0p8_4, weight)
+#                    self.h_n_ak4fwd.Fill(n_fwd_4, weight)
+#                    self.h_n_ak4L.Fill(n_LdR0p8_4, weight)
+#                    self.h_n_ak4L100.Fill(n_LPt100dR0p8_4, weight)
+#                    self.h_n_ak4M.Fill(n_MdR0p8_4, weight)
+#                    self.h_n_ak4M100.Fill(n_MPt100dR0p8_4, weight)
+#                    self.h_n_ak4T.Fill(n_TdR0p8_4, weight)
+#                    self.h_n_ak4T100.Fill(n_TPt100dR0p8_4, weight)
+#                    self.h_n_ak4L150.Fill(n_LPt150dR0p8_4, weight)
+#                    self.h_n_ak4M150.Fill(n_MPt150dR0p8_4, weight)
+#                    self.h_n_ak4T150.Fill(n_TPt150dR0p8_4, weight)
+#                    self.h_isolationCA15.Fill(ratioCA15_04, weight)
                     self.h_met.Fill(met, weight)
 
                 if jpt_8 > PTCUT and jt21P_8 < T21DDTCUT and jmsd_8 > MASSCUT:
                     self.h_msd_ak8_t21ddtCut.Fill(jmsd_8, weight)
-                    self.h_t32_ak8_t21ddtCut.Fill(jt32_8, weight)
+#                    self.h_t32_ak8_t21ddtCut.Fill(jt32_8, weight)
 
-                if jpt_8 > PTCUT and jtN2b1sdddt_8 < 0 and jmsd_8 > MASSCUT:
-                    self.h_msd_ak8_N2Cut.Fill(jmsd_8, weight)
+#                if jpt_8 > PTCUT and jtN2b1sdddt_8 < 0 and jmsd_8 > MASSCUT:
+#                    self.h_msd_ak8_N2Cut.Fill(jmsd_8, weight)
 
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and isTightVJet:
-                    self.h_msd_ak8_topR1.Fill(jmsd_8, weight)
-                    self.h_msd_v_pt_ak8_topR1.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR2_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR2_pass.Fill(jmsd_8, jpt_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_topR2_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR2_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and jt21P_8 < 0.4 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR3_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR3_pass.Fill(jmsd_8, jpt_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_topR3_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR3_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and jt21P_8 < 0.4 and jt32_8 > 0.7 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR4_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR4_pass.Fill(jmsd_8, jpt_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_topR4_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR4_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_MPt100dR0p8_4 < 2 and jt21P_8 < T21DDTCUT and n_fwd_4 < 3 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR5_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR5_pass.Fill(jmsd_8, jpt_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_topR5_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR5_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and isTightVJet:
+#                    self.h_msd_ak8_topR1.Fill(jmsd_8, weight)
+#                    self.h_msd_v_pt_ak8_topR1.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR2_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR2_pass.Fill(jmsd_8, jpt_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_topR2_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR2_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and jt21P_8 < 0.4 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR3_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR3_pass.Fill(jmsd_8, jpt_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_topR3_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR3_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and jt21P_8 < 0.4 and jt32_8 > 0.7 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR4_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR4_pass.Fill(jmsd_8, jpt_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_topR4_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR4_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and n_MPt100dR0p8_4 < 2 and jt21P_8 < T21DDTCUT and n_fwd_4 < 3 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR5_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR5_pass.Fill(jmsd_8, jpt_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_topR5_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR5_fail.Fill(jmsd_8, jpt_8, weight)
 
-            if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and isTightVJet:
-                cut[6] = cut[6] + 1
+#            if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and isTightVJet:
+#                cut[6] = cut[6] + 1
             #if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and isTightVJet:
                 #cut[7] = cut[7] + 1
-            if (not self._minBranches) and jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < T21DDTCUT and isTightVJet:
-                if jdb_8 > DBTAGCUT:
+#            if (not self._minBranches) and jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < T21DDTCUT and isTightVJet:
+#                if jdb_8 > DBTAGCUT:
                     # cut[9]=cut[9]+1
-                    self.h_msd_ak8_topR6_pass.Fill(jmsd_8, weight)
-                    self.h_msd_ak8_raw_SR_pass.Fill(jmsd_8_raw, weight)
-                    self.h_msd_v_pt_ak8_topR6_pass.Fill(jmsd_8, jpt_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_raw_pass.Fill(jmsd_8_raw, jpt_8, weight)
+#                    self.h_msd_ak8_topR6_pass.Fill(jmsd_8, weight)
+#                    self.h_msd_ak8_raw_SR_pass.Fill(jmsd_8_raw, weight)
+#                    self.h_msd_v_pt_ak8_topR6_pass.Fill(jmsd_8, jpt_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_raw_pass.Fill(jmsd_8_raw, jpt_8, weight)
                     # for signal morphing
-                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
-                        self.h_msd_v_pt_ak8_topR6_pass_matched.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_pass_unmatched.Fill(jmsd_8, jpt_8, weight)
-                elif jdb_8 > self.DBTAGCUTMIN:
-                    self.h_msd_ak8_topR6_fail.Fill(jmsd_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_fail.Fill(jmsd_8, jpt_8, weight)
-                    self.h_msd_ak8_raw_SR_fail.Fill(jmsd_8_raw, weight)
-                    self.h_msd_v_pt_ak8_topR6_raw_fail.Fill(jmsd_8, jpt_8, weight)
+#                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
+#                        self.h_msd_v_pt_ak8_topR6_pass_matched.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_pass_unmatched.Fill(jmsd_8, jpt_8, weight)
+#                elif jdb_8 > self.DBTAGCUTMIN:
+#                    self.h_msd_ak8_topR6_fail.Fill(jmsd_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_fail.Fill(jmsd_8, jpt_8, weight)
+#                    self.h_msd_ak8_raw_SR_fail.Fill(jmsd_8_raw, weight)
+#                    self.h_msd_v_pt_ak8_topR6_raw_fail.Fill(jmsd_8, jpt_8, weight)
                     # for signal morphing
-                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
-                        self.h_msd_v_pt_ak8_topR6_fail_matched.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_fail_unmatched.Fill(jmsd_8, jpt_8, weight)
-	    if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and isTightVJet and jdb_8 > DBTAGCUT and rh_8<-2.1 and rh_8>-6.: 	
-		if (not self._minBranches): self.h_n2b1sdddt_ak8_aftercut.Fill(jtN2b1sdddt_8,weight)
-            if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
-                cut[8] = cut[8] + 1
-		if  rh_8<-2.1 and rh_8>-6.:
-		    cut[7] = cut[7] + 1
-		    if (not self._minBranches): self.h_dbtag_ak8_aftercut.Fill(jdb_8,weight)
-                if jdb_8 > DBTAGCUT:
-                    cut[9] = cut[9] + 1
-                    self.h_msd_ak8_topR6_N2_pass.Fill(jmsd_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_N2_pass.Fill(jmsd_8, jpt_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_N2_pass_triggerUp.Fill(jmsd_8, jpt_8, weight_triggerUp)
-                    self.h_msd_v_pt_ak8_topR6_N2_pass_triggerDown.Fill(jmsd_8, jpt_8, weight_triggerDown)
-                    self.h_msd_v_pt_ak8_topR6_N2_pass_PuUp.Fill(jmsd_8, jpt_8, weight_pu_up)
-                    self.h_msd_v_pt_ak8_topR6_N2_pass_PuDown.Fill(jmsd_8, jpt_8, weight_pu_down)
+#                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
+#                        self.h_msd_v_pt_ak8_topR6_fail_matched.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_fail_unmatched.Fill(jmsd_8, jpt_8, weight)
+#	    if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and isTightVJet and jdb_8 > DBTAGCUT and rh_8<-2.1 and rh_8>-6.: 	
+#		if (not self._minBranches): self.h_n2b1sdddt_ak8_aftercut.Fill(jtN2b1sdddt_8,weight)
+#            if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
+#                cut[8] = cut[8] + 1
+#		if  rh_8<-2.1 and rh_8>-6.:
+#		    cut[7] = cut[7] + 1
+#		    if (not self._minBranches): self.h_dbtag_ak8_aftercut.Fill(jdb_8,weight)
+#                if jdb_8 > DBTAGCUT:
+#                    cut[9] = cut[9] + 1
+#                    self.h_msd_ak8_topR6_N2_pass.Fill(jmsd_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_N2_pass.Fill(jmsd_8, jpt_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_N2_pass_triggerUp.Fill(jmsd_8, jpt_8, weight_triggerUp)
+#                    self.h_msd_v_pt_ak8_topR6_N2_pass_triggerDown.Fill(jmsd_8, jpt_8, weight_triggerDown)
+#                    self.h_msd_v_pt_ak8_topR6_N2_pass_PuUp.Fill(jmsd_8, jpt_8, weight_pu_up)
+#                    self.h_msd_v_pt_ak8_topR6_N2_pass_PuDown.Fill(jmsd_8, jpt_8, weight_pu_down)
 
                     # for signal morphing
-                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
-                        self.h_msd_v_pt_ak8_topR6_N2_pass_matched.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_N2_pass_unmatched.Fill(jmsd_8, jpt_8, weight)
-                elif jdb_8 > self.DBTAGCUTMIN:
-                    self.h_msd_ak8_topR6_N2_fail.Fill(jmsd_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_N2_fail.Fill(jmsd_8, jpt_8, weight)
-                    self.h_msd_v_pt_ak8_topR6_N2_fail_triggerUp.Fill(jmsd_8, jpt_8, weight_triggerUp)
-                    self.h_msd_v_pt_ak8_topR6_N2_fail_triggerDown.Fill(jmsd_8, jpt_8, weight_triggerDown)
-                    self.h_msd_v_pt_ak8_topR6_N2_fail_PuUp.Fill(jmsd_8, jpt_8, weight_pu_up)
-                    self.h_msd_v_pt_ak8_topR6_N2_fail_PuDown.Fill(jmsd_8, jpt_8, weight_pu_down)
+#                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
+#                        self.h_msd_v_pt_ak8_topR6_N2_pass_matched.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_N2_pass_unmatched.Fill(jmsd_8, jpt_8, weight)
+#                elif jdb_8 > self.DBTAGCUTMIN:
+#                    self.h_msd_ak8_topR6_N2_fail.Fill(jmsd_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_N2_fail.Fill(jmsd_8, jpt_8, weight)
+#                    self.h_msd_v_pt_ak8_topR6_N2_fail_triggerUp.Fill(jmsd_8, jpt_8, weight_triggerUp)
+#                    self.h_msd_v_pt_ak8_topR6_N2_fail_triggerDown.Fill(jmsd_8, jpt_8, weight_triggerDown)
+#                    self.h_msd_v_pt_ak8_topR6_N2_fail_PuUp.Fill(jmsd_8, jpt_8, weight_pu_up)
+#                    self.h_msd_v_pt_ak8_topR6_N2_fail_PuDown.Fill(jmsd_8, jpt_8, weight_pu_down)
 
                     # for signal morphing
-                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
-                        self.h_msd_v_pt_ak8_topR6_N2_fail_matched.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_N2_fail_unmatched.Fill(jmsd_8, jpt_8, weight)
+#                    if dphi < 0.8 and dpt < 0.5 and dmass < 0.3:
+#                        self.h_msd_v_pt_ak8_topR6_N2_fail_matched.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_N2_fail_unmatched.Fill(jmsd_8, jpt_8, weight)
 
-            for syst in ['JESUp', 'JESDown', 'JERUp', 'JERDown']:
-                if (not self._minBranches) and eval('jpt_8_%s' % syst) > PTCUT and jmsd_8 > MASSCUT and eval('met_%s' % syst) < METCUT and eval(
-                                'n_dR0p8_4_%s' % syst) < NJETCUT and jt21P_8 < T21DDTCUT and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        (getattr(self, 'h_msd_ak8_topR6_pass_%s' % syst)).Fill(jmsd_8, weight)
-                        (getattr(self, 'h_msd_v_pt_ak8_topR6_pass_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
-                                                                                    weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        (getattr(self, 'h_msd_ak8_topR6_fail_%s' % syst)).Fill(jmsd_8, weight)
-                        (getattr(self, 'h_msd_v_pt_ak8_topR6_fail_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
-                                                                                    weight)
-                if eval('jpt_8_%s' % syst) > PTCUT and jmsd_8 > MASSCUT and eval('met_%s' % syst) < METCUT and eval(
-                                'n_dR0p8_4_%s' % syst) < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        (getattr(self, 'h_msd_ak8_topR6_N2_pass_%s' % syst)).Fill(jmsd_8, weight)
-                        (getattr(self, 'h_msd_v_pt_ak8_topR6_N2_pass_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
-                                                                                       weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        (getattr(self, 'h_msd_ak8_topR6_N2_fail_%s' % syst)).Fill(jmsd_8, weight)
-                        (getattr(self, 'h_msd_v_pt_ak8_topR6_N2_fail_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
-                                                                                       weight)
+#            for syst in ['JESUp', 'JESDown', 'JERUp', 'JERDown']:
+#                if (not self._minBranches) and eval('jpt_8_%s' % syst) > PTCUT and jmsd_8 > MASSCUT and eval('met_%s' % syst) < METCUT and eval(
+#                                'n_dR0p8_4_%s' % syst) < NJETCUT and jt21P_8 < T21DDTCUT and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        (getattr(self, 'h_msd_ak8_topR6_pass_%s' % syst)).Fill(jmsd_8, weight)
+#                        (getattr(self, 'h_msd_v_pt_ak8_topR6_pass_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
+#                                                                                    weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        (getattr(self, 'h_msd_ak8_topR6_fail_%s' % syst)).Fill(jmsd_8, weight)
+#                        (getattr(self, 'h_msd_v_pt_ak8_topR6_fail_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
+#                                                                                    weight)
+#                if eval('jpt_8_%s' % syst) > PTCUT and jmsd_8 > MASSCUT and eval('met_%s' % syst) < METCUT and eval(
+#                                'n_dR0p8_4_%s' % syst) < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        (getattr(self, 'h_msd_ak8_topR6_N2_pass_%s' % syst)).Fill(jmsd_8, weight)
+#                        (getattr(self, 'h_msd_v_pt_ak8_topR6_N2_pass_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
+#                                                                                       weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        (getattr(self, 'h_msd_ak8_topR6_N2_fail_%s' % syst)).Fill(jmsd_8, weight)
+#                        (getattr(self, 'h_msd_v_pt_ak8_topR6_N2_fail_%s' % syst)).Fill(jmsd_8, eval('jpt_8_%s' % syst),
+#                                                                                       weight)
 
             ###Double-b optimization for ggH
             if not self._minBranches:
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
-                    if jdb_8 > 0.91:
-                        self.h_msd_v_pt_ak8_topR6_0p91_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_0p91_fail.Fill(jmsd_8, jpt_8, weight)
-                    if jdb_8 > 0.92:
-                        self.h_msd_v_pt_ak8_topR6_0p92_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_0p92_fail.Fill(jmsd_8, jpt_8, weight)
-                    if jdb_8 > 0.93:
-                        self.h_msd_v_pt_ak8_topR6_0p93_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_0p93_fail.Fill(jmsd_8, jpt_8, weight)
-                    if jdb_8 > 0.94:
-                        self.h_msd_v_pt_ak8_topR6_0p94_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_0p94_fail.Fill(jmsd_8, jpt_8, weight)
-                    if jdb_8 > 0.95:
-                        self.h_msd_v_pt_ak8_topR6_0p95_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_v_pt_ak8_topR6_0p95_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
+#                    if jdb_8 > 0.91:
+#                        self.h_msd_v_pt_ak8_topR6_0p91_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_0p91_fail.Fill(jmsd_8, jpt_8, weight)
+#                    if jdb_8 > 0.92:
+#                        self.h_msd_v_pt_ak8_topR6_0p92_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_0p92_fail.Fill(jmsd_8, jpt_8, weight)
+#                    if jdb_8 > 0.93:
+#                        self.h_msd_v_pt_ak8_topR6_0p93_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_0p93_fail.Fill(jmsd_8, jpt_8, weight)
+#                    if jdb_8 > 0.94:
+#                        self.h_msd_v_pt_ak8_topR6_0p94_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_0p94_fail.Fill(jmsd_8, jpt_8, weight)
+#                    if jdb_8 > 0.95:
+#                        self.h_msd_v_pt_ak8_topR6_0p95_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_v_pt_ak8_topR6_0p95_fail.Fill(jmsd_8, jpt_8, weight)
 
                 #######tau21 optimization for ggH
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p4_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p4_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p4_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p4_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.45 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p45_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p45_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p45_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p45_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.5 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p5_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p5_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p5_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p5_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.6 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p6_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p6_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p6_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p6_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.65 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p65_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p65_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p65_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p65_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.7 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p7_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p7_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p7_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p7_fail.Fill(jmsd_8, jpt_8, weight)
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.75 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR6_0p75_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p75_pass.Fill(jmsd_8, jpt_8, weight)
-                    else:
-                        self.h_msd_ak8_topR6_0p75_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR6_0p75_fail.Fill(jmsd_8, jpt_8, weight)
-
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jtN2b1sdddt_8 < 0 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p4_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p4_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p4_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p4_fail.Fill(jmsd_8, jpt_8, weight)
+ #               if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.45 and isTightVJet:
+ #                   if jdb_8 > DBTAGCUT:
+ #                       self.h_msd_ak8_topR6_0p45_pass.Fill(jmsd_8, weight)
+ #                       self.h_msd_v_pt_ak8_topR6_0p45_pass.Fill(jmsd_8, jpt_8, weight)
+ #                   else:
+#                        self.h_msd_ak8_topR6_0p45_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p45_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.5 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p5_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p5_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p5_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p5_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.6 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p6_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p6_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p6_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p6_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.65 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p65_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p65_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p65_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p65_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.7 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p7_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p7_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p7_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p7_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and met < METCUT and n_dR0p8_4 < NJETCUT and jt21P_8 < 0.75 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR6_0p75_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p75_pass.Fill(jmsd_8, jpt_8, weight)
+#                    else:
+#                        self.h_msd_ak8_topR6_0p75_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR6_0p75_fail.Fill(jmsd_8, jpt_8, weight)
+#
                 ################################
-                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and jpt_8_sub1 < 300 and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and jt21P_8 < 0.4 and isTightVJet:
-                    if jdb_8 > DBTAGCUT:
-                        self.h_msd_ak8_topR7_pass.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR7_pass.Fill(jmsd_8, jpt_8, weight)
-                    elif jdb_8 > self.DBTAGCUTMIN:
-                        self.h_msd_ak8_topR7_fail.Fill(jmsd_8, weight)
-                        self.h_msd_v_pt_ak8_topR7_fail.Fill(jmsd_8, jpt_8, weight)
+#                if jpt_8 > PTCUT and jmsd_8 > MASSCUT and jpt_8_sub1 < 300 and met < METCUT and n_dR0p8_4 < NJETCUT and n_TdR0p8_4 < 3 and jt21P_8 < 0.4 and isTightVJet:
+#                    if jdb_8 > DBTAGCUT:
+#                        self.h_msd_ak8_topR7_pass.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR7_pass.Fill(jmsd_8, jpt_8, weight)
+#                    elif jdb_8 > self.DBTAGCUTMIN:
+#                        self.h_msd_ak8_topR7_fail.Fill(jmsd_8, weight)
+#                        self.h_msd_v_pt_ak8_topR7_fail.Fill(jmsd_8, jpt_8, weight)
 
 		AK4_0 = ROOT.TLorentzVector()
 		AK4_0.SetPtEtaPhiM(self.AK4Puppijet0_pt[0],self.AK4Puppijet0_eta[0],self.AK4Puppijet0_phi[0],self.AK4Puppijet0_mass[0])
@@ -1969,7 +2123,7 @@ class sampleContainer:
                 AK4_1.SetPtEtaPhiM(self.AK4Puppijet1_pt[0],self.AK4Puppijet1_eta[0],self.AK4Puppijet1_phi[0],self.AK4Puppijet1_mass[0])
 		mjj_AK4 = (AK4_0 + AK4_1).M()
 
-                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and jtN2b1sdddt_8 < 0 and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT:
+                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT and self.jet1tau21[0] < 0.55 and (self.vtype[0] == -1 or self.vtype[0] == 4):
 #                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and jtN2b1sdddt_8 < 0 and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT and mjj_AK4_qq < 200.:
                     self.h_msd_ak8_dbtagCut.Fill(jmsd_8, weight)
                     self.h_pt_ak8_dbtagCut.Fill(jpt_8, weight)
@@ -1989,21 +2143,25 @@ class sampleContainer:
                     self.h_dEta_ak4_nonH_dbtagCut_pT50.Fill(jDeta_ak4_pT50, weight)
                     self.h_dEta_ak4_nonH_dbtagCut_pT70.Fill(jDeta_ak4_pT70, weight)
                     self.h_dEta_ak4_nonH_dbtagCut_pT100.Fill(jDeta_ak4_pT100, weight)
-		    self.h_ak4_multiplicity_pT30.Fill(n_fwd_4, weight)
+		    self.h_ak4_multiplicity_pT30.Fill(AK4jetMultiplicity_30, weight)
                     self.h_ak4_multiplicity_pT50.Fill(AK4jetMultiplicity_50, weight)
                     self.h_ak4_multiplicity_pT70.Fill(AK4jetMultiplicity_70, weight)
                     self.h_ak4_multiplicity_pT100.Fill(AK4jetMultiplicity_100, weight)
+		    if mjj_AK4_qq_pT30 > 0:
+			print mjj_AK4_qq_pT30
+			print ""
+			print weight
 
 
-                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and jtN2b1sdddt_8 < 0 and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT and nAK4PuppijetsPt30 > 3.:
+                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT and nAK4PuppijetsPt30 > 3.:
 		    self.h_msd_ak8_4ak4.Fill(jmsd_8, weight)
 
-                if jpt_8 > PTCUT and jpt_8 < 1000. and jmsd_8 > MASSCUT and jtN2b1sdddt_8 < 0 and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT:
-                    self.h_DeltaR_Higgs_AK8.Fill(DeltaR_H_AK8,weight)
+                if jpt_8 > PTCUT and jpt_8 < 1000. and jmsd_8 > MASSCUT and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT:
+#                    self.h_DeltaR_Higgs_AK8.Fill(DeltaR_H_AK8,weight)
                     self.h_dEta_ak4_nonH.Fill(jDeta_4_nonHiggs, weight)
                     self.h_dEta_ak4.Fill(jDeta_4, weight)
 
-                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and jtN2b1sdddt_8 < 0 and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT:
+                if jpt_8 > PTCUT and jpt_8 < 1000. and jdb_8 > DBTAGCUT and jmsd_8 > MASSCUT and rh_8<-2.1 and rh_8>-6. and nmuLoose == 0 and neleLoose == 0 and ntau == 0 and met < METCUT:
                     self.h_msd_ak8_dbtagCut_Cuts.Fill(jmsd_8, weight)
 
             ##### CA15 info
@@ -2029,18 +2187,18 @@ class sampleContainer:
         print "\n"
         
         if not self._minBranches:
-            self.h_Cuts.SetBinContent(4, float(cut[0] / cut[3] * 100.))
-            self.h_Cuts.SetBinContent(5, float(cut[1] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(4, float(cut[0] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(5, float(cut[1] / cut[3] * 100.))
             # self.h_Cuts.SetBinContent(6,float(cut[2]/nent*100.))
-            self.h_Cuts.SetBinContent(1, float(cut[3] / cut[3] * 100.))
-            self.h_Cuts.SetBinContent(2, float(cut[4] / cut[3] * 100.))
-            self.h_Cuts.SetBinContent(3, float(cut[5] / cut[3] * 100.))
-            self.h_Cuts.SetBinContent(6, float(cut[6] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(1, float(cut[3] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(2, float(cut[4] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(3, float(cut[5] / cut[3] * 100.))
+#            self.h_Cuts.SetBinContent(6, float(cut[6] / cut[3] * 100.))
   #          self.h_Cuts.SetBinContent(7, float(cut[7] / cut[3] * 100.))
             # self.h_Cuts.SetBinContent(9,float(cut[8]/nent*100.))
-            self.h_Cuts.SetBinContent(8,float(cut[7]/ cut[3]  *100.))
-            self.h_Cuts.SetBinContent(7, float(cut[8]) / cut[3] * 100.)
-            print(cut[0] / nent * 100., cut[7], cut[8], cut[9])
+#            self.h_Cuts.SetBinContent(8,float(cut[7]/ cut[3]  *100.))
+#            self.h_Cuts.SetBinContent(7, float(cut[8]) / cut[3] * 100.)
+#            print(cut[0] / nent * 100., cut[7], cut[8], cut[9])
             a_Cuts = self.h_Cuts.GetXaxis()
             a_Cuts.SetBinLabel(4, "lep veto")
             a_Cuts.SetBinLabel(5, "#tau veto")

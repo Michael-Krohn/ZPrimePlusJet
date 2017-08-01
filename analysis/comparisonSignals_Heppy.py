@@ -9,7 +9,7 @@ import time
 import array
 
 from plotHelpers import *
-from sampleContainer import *
+from sampleContainer_Heppy import *
 DBTAGMIN=-99
 #
 
@@ -17,10 +17,10 @@ DBTAGMIN=-99
 def main(options,args):
     #idir = "/eos/uscms/store/user/lpchbb/ggHsample_V11/sklim-v0-28Oct/"
     #odir = "plots_2016_10_31/"
-    idir = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/cvernier'
+    idir = 'root://cmseos.fnal.gov//store/user/mkrohn/DASZLE/Heppy/v2'
 #    idir = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/norm2/cvernier'
 #    idir = options.idir
-    idirData = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/cvernier'
+    idirData = 'root://cmseos.fnal.gov//store/user/mkrohn/DASZLE/Heppy/v2'
 #    idirData = 'root://cmseos.fnal.gov//store/user/lpchbb/zprimebits-v12.04/norm2/cvernier'
 #    idirData = 'root://cmseos.fnal.gov//eos/uscms/store/user/lpchbb/zprimebits-v12.05/'
     odir = options.odir
@@ -36,8 +36,8 @@ def main(options,args):
 	       'Phibb': ' Phi(125)(b#bar{b})'}
 
         
-    tfiles = {'ggH': [idirData + '/GluGluHToBB_M125_13TeV_powheg_pythia8_CKKW_1000pb_weighted.root'],
-	       'VBF': [idir+'/VBFHToBB_M_125_13TeV_powheg_pythia8_weightfix_all_1000pb_weighted.root'],
+    tfiles = {'ggH': [idirData + '/GluGluHToBB_0.root'],
+	       'VBF': [idir+'/VBFHToBB_0.root'],
                'VH': [idir+'/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_ext_1000pb_weighted.root',
 			idir+'/ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
 			idir+'/WminusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8_1000pb_weighted.root',
@@ -75,13 +75,13 @@ def main(options,args):
         
     print "Signals... "
     sigSamples = {}
-    sigSamples['ggH']  = sampleContainer('ggH',tfiles['ggH']  , 1, DBTAGMIN,lumi ) 
+    sigSamples['ggH']  = sampleContainer_Heppy('ggH',tfiles['ggH']  , 1, DBTAGMIN,lumi ) 
 #    sigSamples['Zqq']  = sampleContainer('Zqq',tfiles['Zqq']  , 1, DBTAGMIN,lumi)
 #    sigSamples['Wqq'] = sampleContainer('Wqq',tfiles['Wqq'], 1, DBTAGMIN,lumi) 
 #    sigSamples['DYqq'] = sampleContainer('DYqq',tfiles['DYqq'], 1, DBTAGMIN,lumi ) 	
-    sigSamples['VBF'] = sampleContainer('VBF',tfiles['VBF'], 1, DBTAGMIN,lumi )
-    sigSamples['VH'] = sampleContainer('VH',tfiles['VH'], 1, DBTAGMIN,lumi )	
-    sigSamples['ttH'] = sampleContainer('ttH',tfiles['ttH'], 1, DBTAGMIN,lumi )
+    sigSamples['VBF'] = sampleContainer_Heppy('VBF',tfiles['VBF'], 1, DBTAGMIN,lumi )
+#    sigSamples['VH'] = sampleContainer('VH',tfiles['VH'], 1, DBTAGMIN,lumi )	
+#    sigSamples['ttH'] = sampleContainer('ttH',tfiles['ttH'], 1, DBTAGMIN,lumi )
     #sigSamples['Phibb'] = sampleContainer('Phibb',tfiles['Phibb'], 1, lumi*0.035)   
 
 
@@ -94,7 +94,7 @@ def main(options,args):
 'h_met_dbtagCut'     ,
 'h_DeltaR_0'     ,
 'h_DeltaR_1'     ,
-'h_DeltaR_Higgs_AK8' ,
+#'h_DeltaR_Higgs_AK8' ,
 #'h_pt_ak8'          ,
 'h_pt_ak8_dbtagCut' ,
 #'h_msd_ak8'         ,
@@ -110,11 +110,11 @@ def main(options,args):
 'h_mjj_ak4'          ,
 'h_dEta_ak4_nonH'    ,
 'h_msd_ak8_4ak4'     ,
-'h_mjj_ak4_qq'       ,
-#'h_mjj_ak4_qq_pT30'       ,
-#'h_mjj_ak4_qq_pT50'       ,
-#'h_mjj_ak4_qq_pT70'       ,
-#'h_mjj_ak4_qq_pT100'       ,
+#'h_mjj_ak4_qq'       ,
+'h_mjj_ak4_qq_pT30'       ,
+'h_mjj_ak4_qq_pT50'       ,
+'h_mjj_ak4_qq_pT70'       ,
+'h_mjj_ak4_qq_pT100'       ,
 'h_ak4_multiplicity_pT30' ,
 'h_ak4_multiplicity_pT50' ,
 'h_ak4_multiplicity_pT70' ,
